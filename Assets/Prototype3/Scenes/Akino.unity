@@ -354,8 +354,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42e6f7d83ad39b47b50306ecb019b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 1
-  mouseInput: {x: 0, y: 0, z: 0}
 --- !u!81 &1765063772
 AudioListener:
   m_ObjectHideFlags: 0
@@ -423,7 +421,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1765063770}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.09904629, y: 0.89240074, z: -0.23911643, w: -0.36964068}
+  m_LocalRotation: {x: -0.099046275, y: 0.8924007, z: -0.23911643, w: -0.36964068}
   m_LocalPosition: {x: 15, y: 15, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
