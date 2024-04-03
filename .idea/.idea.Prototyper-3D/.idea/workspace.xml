@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2256612-c251-4d8b-abf6-64df31131acb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Lan.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Lan.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Prototyper-3D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prototyper-3D/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +16,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/52/0aae6d07/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../10-seconds-before-the-deadline/[GDS4 - Prototype 1] 10 seconds before the deadline/Assets/Scripts/10 seconds before deadlines/HighlightingObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Xavier/Assets/Scripts/HighlightObj.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -98,7 +98,7 @@
       <workItem from="1712046704302" duration="76000" />
       <workItem from="1712046787708" duration="5073000" />
       <workItem from="1712052357386" duration="863000" />
-      <workItem from="1712128347743" duration="5089000" />
+      <workItem from="1712128347743" duration="5929000" />
     </task>
     <servers />
   </component>
