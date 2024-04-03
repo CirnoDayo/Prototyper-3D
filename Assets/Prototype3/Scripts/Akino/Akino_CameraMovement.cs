@@ -5,44 +5,29 @@ using UnityEngine;
 
 public class Akino_CameraMovement : MonoBehaviour
 {
-    private Vector3 Origin;
-    private Vector3 Difference;
-    private Vector3 ResetCamera;
+    [Range(1f, 5f)] public float sensitivity = 1f;
 
-    private bool drag = false;
-
-
+    Vector3 currentPosition;
+    Vector3 movementVector;
 
     private void Start()
     {
-        ResetCamera = Camera.main.transform.position;
+        currentPosition = transform.position;
     }
-
 
     private void LateUpdate()
     {
-        if (Input.GetMouseButton(0))
+        movementVector.x = Input.GetAxis("Mouse X");
+        movementVector.z = Input.GetAxis("Mouse Y");
+        movementVector = Quaternion.Euler(0f, 45f, 0f) * movementVector;
+        if (Input.GetMouseButton(1))
         {
-            Difference = (Camera.main.ScreenToWorldPoint(Input.mousePosition)) - Camera.main.transform.position;
-            if (drag == false)
-            {
-                drag = true;
-                Origin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            }
-
+            transform.position -= movementVector * sensitivity;
+            Cursor.lockState = CursorLockMode.Locked;
         }
         else
         {
-            drag = false;
+            Cursor.lockState = CursorLockMode.None;
         }
-
-        if (drag)
-        {
-            Camera.main.transform.position = Origin - Difference * 0.5f;
-        }
-
-        if (Input.GetMouseButton(1))
-            Camera.main.transform.position = ResetCamera;
-
     }
 }
