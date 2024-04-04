@@ -2,32 +2,27 @@ using UnityEngine;
 
 public class InstantiateCanon : MonoBehaviour
 {
-    public GameObject lightCanonPrefab; // Assign in Unity Editor
-    public GameObject heavyCanonPrefab; // Assign in Unity Editor
-    public Material transparentMaterial; // Assign a transparent material in Unity Editor
-    public Camera gameCamera; // Assign the main game camera in Unity Editor
+    public GameObject lightCanonPrefab;
+    public GameObject heavyCanonPrefab;
+    public Material transparentMaterial;
+    public Camera gameCamera;
 
     private GameObject currentCanonInstance;
     private bool isPlacingCanon = false;
+    private float placementDistance = 10f; // Distance from the camera at which the object is placed
 
     void Update()
     {
         if (isPlacingCanon && currentCanonInstance != null)
         {
-            // Follow the mouse cursor
-            Ray ray = gameCamera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
-            {
-                // Assuming the ground or the surface on which the canon is to be placed is at y = 0
-                Vector3 positionToPlace = hit.point;
-                currentCanonInstance.transform.position = new Vector3(positionToPlace.x, 0f, positionToPlace.z);
-            }
+            // Follow the mouse cursor in screen space
+            Vector3 mouseScreenPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, placementDistance);
+            Vector3 worldPosition = gameCamera.ScreenToWorldPoint(mouseScreenPosition);
+            currentCanonInstance.transform.position = worldPosition;
 
             // Place the canon on mouse click
             if (Input.GetMouseButtonDown(0))
             {
-                // Reset placing logic and apply the original material
                 isPlacingCanon = false;
                 currentCanonInstance.GetComponent<Renderer>().material = GetOriginalMaterial(currentCanonInstance);
             }
@@ -36,19 +31,22 @@ public class InstantiateCanon : MonoBehaviour
 
     public void InstantiateCanonOfType(string canonType)
     {
-        if (!isPlacingCanon) // Prevent instantiating a new canon if one is already being placed
+        if (!isPlacingCanon)
         {
             GameObject prefab = canonType == "LightCanon" ? lightCanonPrefab : heavyCanonPrefab;
             currentCanonInstance = Instantiate(prefab);
+            currentCanonInstance.transform.position = gameCamera.ScreenToWorldPoint(
+                new Vector3(Input.mousePosition.x, Input.mousePosition.y, placementDistance)
+            );
             ApplyTransparentMaterial(currentCanonInstance);
-            isPlacingCanon = true; // Start the placing logic
+            isPlacingCanon = true;
         }
     }
 
     private void ApplyTransparentMaterial(GameObject canon)
     {
         Renderer[] renderers = canon.GetComponentsInChildren<Renderer>();
-        foreach (var renderer in renderers)
+        foreach (Renderer renderer in renderers)
         {
             renderer.material = transparentMaterial;
         }
@@ -56,8 +54,7 @@ public class InstantiateCanon : MonoBehaviour
 
     private Material GetOriginalMaterial(GameObject canonInstance)
     {
-        // This method returns the correct original material based on the instantiated prefab
         GameObject prefab = canonInstance.name.Contains("LightCanon") ? lightCanonPrefab : heavyCanonPrefab;
-        return prefab.GetComponent<Renderer>().sharedMaterial;
+        return prefab.GetComponent<MeshRenderer>().sharedMaterial;
     }
 }
