@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.UI; 
 public class InstantiateCanon : MonoBehaviour
 {
     public GameObject lightCanonPrefab;
@@ -11,6 +11,17 @@ public class InstantiateCanon : MonoBehaviour
     private bool isPlacingCanon = false;
     private string selectedCanonType = "";
     private float placementDistance = 10f; // Distance from the camera to instantiate objects
+    
+    
+    public int lightCanonLimit = 2;
+    public int heavyCanonLimit = 2;
+    private int lightCanonCount = 0;
+    private int heavyCanonCount = 0;
+
+    public Button lightCanonButton; // Assign in Unity Editor
+    public Button heavyCanonButton; // Assign in Unity Editor
+    public Text lightCanonText; // Assign in Unity Editor
+    public Text heavyCanonText; // Assign in Unity Editor
 
     void Update()
     {
@@ -48,7 +59,52 @@ public class InstantiateCanon : MonoBehaviour
         GameObject prefab = selectedCanonType == "LightCanon" ? lightCanonPrefab : heavyCanonPrefab;
         GameObject newInstance = Instantiate(prefab, position, Quaternion.identity);
         newInstance.GetComponent<Renderer>().material = GetOriginalMaterial(newInstance);
+
+        // Update the count and UI for the appropriate canon type
+        if (selectedCanonType == "LightCanon")
+        {
+            lightCanonCount++;
+            lightCanonText.text = $"Light Canons Left: {lightCanonLimit - lightCanonCount}";
+            if (lightCanonCount >= lightCanonLimit)
+            {
+                lightCanonButton.interactable = false;
+                StopPlacingCanon();
+            }
+        }
+        else if (selectedCanonType == "HeavyCanon")
+        {
+            heavyCanonCount++;
+            heavyCanonText.text = $"Heavy Canons Left: {heavyCanonLimit - heavyCanonCount}";
+            if (heavyCanonCount >= heavyCanonLimit)
+            {
+                heavyCanonButton.interactable = false;
+                StopPlacingCanon();
+            }
+        }
     }
+
+    private void StopPlacingCanon()
+    {
+        if (currentCanonInstance != null)
+        {
+            Destroy(currentCanonInstance);
+        }
+
+        isPlacingCanon = false;
+    }
+
+    
+    // Call this method to reset canon limits (e.g., at the start of a new game or level)
+    public void ResetCanonLimits()
+    {
+        lightCanonCount = 0;
+        heavyCanonCount = 0;
+        lightCanonText.text = $"Light Canons Left: {lightCanonLimit}";
+        heavyCanonText.text = $"Heavy Canons Left: {heavyCanonLimit}";
+        lightCanonButton.interactable = true;
+        heavyCanonButton.interactable = true;
+    }
+    
 
     public void InstantiateCanonOfType(string canonType)
     {
