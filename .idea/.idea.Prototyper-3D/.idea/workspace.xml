@@ -4,7 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2256612-c251-4d8b-abf6-64df31131acb" name="Changes" comment="" />
+    <list default="true" id="a2256612-c251-4d8b-abf6-64df31131acb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Materials/Grey.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Materials/Grey.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Materials/Ground Brown.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Materials/Ground Brown.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Materials/Red.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Materials/Red.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Akino.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Akino/GroundWithPath.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Akino/GroundWithPath.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Akino.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Akino/NavMesh-NavMesh.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Akino/NavMesh-NavMesh.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Akino/Akino_CameraMovement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Akino/Akino_CameraMovement.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Akino/Akino_LaserPointer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Akino/Akino_LaserPointer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Akino/Akino_MonsterMovement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Akino/Akino_MonsterMovement.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/TimelineSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Akino.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Akino.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +47,7 @@
     <setting file="file://$PROJECT_DIR$/../10-seconds-before-the-deadline/[GDS4 - Prototype 1] 10 seconds before the deadline/Assets/Scripts/10 seconds before deadlines/HighlightingObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Xavier/Assets/Scripts/HighlightObj.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -31,7 +61,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Lan-Dev",
+    "git-widget-placeholder": "Merging Merge-Experiment",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -107,9 +137,11 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
