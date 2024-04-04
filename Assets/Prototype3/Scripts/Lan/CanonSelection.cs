@@ -6,11 +6,11 @@ public class CanonSelection : MonoBehaviour
 
     public void SelectLightCanon()
     {
-        instantiateCanonScript.SetCanonType("LightCanon");
+        instantiateCanonScript.InstantiateCanonOfType("LightCanon");
     }
 
     public void SelectHeavyCanon()
     {
-        instantiateCanonScript.SetCanonType("HeavyCanon");
+        instantiateCanonScript.InstantiateCanonOfType("HeavyCanon");
     }
 }
