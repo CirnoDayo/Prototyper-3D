@@ -1,7 +1,7 @@
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
-public class InstantiateCannon : MonoBehaviour
+public class CannonInstantiating : MonoBehaviour
 {
     [Header("Cannon Stats")]
     [Header("Heavy Cannon")]
@@ -61,12 +61,11 @@ public class InstantiateCannon : MonoBehaviour
         }
     }
 
-
     private void InstantiateAtPosition(Vector3 position)
     {
         GameObject prefab = selectedCannonType == "Sniper" ? sniperPrefab : heavyCannonPrefab;
         GameObject newInstance = Instantiate(prefab, position, Quaternion.identity);
-        newInstance.GetComponent<Renderer>().material = GetOriginalMaterial(newInstance);
+        newInstance.GetComponent<Renderer>().material = OriginalMaterial(newInstance);
 
         if (selectedCannonType == "Sniper")
         {
@@ -131,7 +130,7 @@ public class InstantiateCannon : MonoBehaviour
         }
     }
 
-    private Material GetOriginalMaterial(GameObject cannonInstance)
+    private Material OriginalMaterial(GameObject cannonInstance)
     {
         GameObject prefab = cannonInstance.name.Contains("Sniper") ? sniperPrefab : heavyCannonPrefab;
         return prefab.GetComponent<Renderer>().sharedMaterial;
