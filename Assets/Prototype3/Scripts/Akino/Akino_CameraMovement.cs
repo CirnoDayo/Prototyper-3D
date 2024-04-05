@@ -7,7 +7,7 @@ public class Akino_CameraMovement : MonoBehaviour
 {
     public float minZoom = 5f;
     public float maxZoom = 50f;
-    [Range(0f, 10f)] public float zoomSensitivity = 1f;
+    [Range(0, 20)] public int zoomSensitivity = 10;
 
     Vector3 currentPosition;
     Vector3 movementVector;

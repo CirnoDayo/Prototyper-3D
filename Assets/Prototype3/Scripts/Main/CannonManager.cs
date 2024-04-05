@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CannonInstantiating : MonoBehaviour
+public class CannonManager : MonoBehaviour
 {
     [Header("Cannon Stats")]
     [Header("Heavy Cannon")]
@@ -22,28 +22,37 @@ public class CannonInstantiating : MonoBehaviour
     [Header("Miscellanious")]
     public Material transparentMaterial;
     public Camera gameCamera;
+    public LayerMask targetLayer;
+    [SerializeField] private Vector3 rayPoint;
     [Space(16)]
     [Header("Private")]
     [SerializeField] private bool isPlacingCannon = false;
     [SerializeField] private string selectedCannonType = "";
     [SerializeField] private GameObject currentCannonInstance;
+    Vector3 griddedPosition;
     private RaycastHit hitInfo;
 
     void Update()
     {
+        Ray ray = gameCamera.ScreenPointToRay(Input.mousePosition);
+        bool hit = Physics.Raycast(ray, out hitInfo, Mathf.Infinity, targetLayer.value);
+
+        if (hitInfo.collider != null)
+        {
+            griddedPosition = hitInfo.collider.transform.position;
+            griddedPosition.y += 2;
+        }
+
         if (isPlacingCannon && currentCannonInstance != null)
         {
-            Ray ray = gameCamera.ScreenPointToRay(Input.mousePosition);
-            int ignoreLayer = ~LayerMask.GetMask("Ignore Raycast");
-            bool hit = Physics.Raycast(ray, out hitInfo, Mathf.Infinity, ignoreLayer);
-            currentCannonInstance.transform.position = hitInfo.point;
+            currentCannonInstance.transform.position = griddedPosition;
 
             if (Input.GetMouseButtonDown(0))
             {
                 if (hit)
                 {
-                    Vector3 placingPosition = new Vector3(hitInfo.point.x, hitInfo.point.y + 1f, hitInfo.point.z);
-                    InstantiateAtPosition(placingPosition);
+                    griddedPosition.y += 1;
+                    InstantiateAtPosition(griddedPosition);
                 }
 
                 if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))

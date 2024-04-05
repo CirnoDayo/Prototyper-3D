@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class UICannonSelect : MonoBehaviour
 {
-    public CannonInstantiating instantiateCannonScript;
+    public CannonManager cannonManagerScript;
 
     public void SelectSniper()
     {
-        instantiateCannonScript.InstantiateCannonOfType("Sniper");
+        cannonManagerScript.InstantiateCannonOfType("Sniper");
     }
 
     public void SelectHeavyCannon()
     {
-        instantiateCannonScript.InstantiateCannonOfType("HeavyCannon");
+        cannonManagerScript.InstantiateCannonOfType("HeavyCannon");
     }
 }
