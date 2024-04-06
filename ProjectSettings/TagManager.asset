@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Highlight
   - HighGround
+  - EnemyWithBomb
+  - NormalEnemy
   layers:
   - Default
   - TransparentFX

@@ -5,34 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2256612-c251-4d8b-abf6-64df31131acb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Materials/Grey.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Materials/Grey.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Materials/Ground Brown.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Materials/Ground Brown.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Materials/Red.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Materials/Red.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Akino.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Akino/GroundWithPath.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Akino/GroundWithPath.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Akino.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Akino/NavMesh-NavMesh.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Akino/NavMesh-NavMesh.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Akino/Akino_CameraMovement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Akino/Akino_CameraMovement.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Akino/Akino_LaserPointer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Akino/Akino_LaserPointer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Akino/Akino_MonsterMovement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Akino/Akino_MonsterMovement.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/TimelineSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Akino.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Akino.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Prototyper-3D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prototyper-3D/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/HeavyCannon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/HeavyCannon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Sniper.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Sniper.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Lan.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Lan.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scenes/MainScene_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scenes/MainScene_1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,9 +21,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/52/0aae6d07/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../10-seconds-before-the-deadline/[GDS4 - Prototype 1] 10 seconds before the deadline/Assets/Scripts/10 seconds before deadlines/HighlightingObject.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Xavier/Assets/Scripts/HighlightObj.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_HeavyCannonScript.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
   <component name="ProjectColorInfo">{
@@ -61,7 +38,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging Merge-Experiment",
+    "git-widget-placeholder": "Lan-Dev",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -73,9 +50,9 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\s3979326\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\s3979326\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\s3979326\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\Admin\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Admin\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\Admin\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -131,6 +108,7 @@
       <workItem from="1712128347743" duration="5929000" />
       <workItem from="1712167590510" duration="7000" />
       <workItem from="1712207100568" duration="6083000" />
+      <workItem from="1712389915025" duration="7860000" />
     </task>
     <servers />
   </component>

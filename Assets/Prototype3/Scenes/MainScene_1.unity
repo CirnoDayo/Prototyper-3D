@@ -477,7 +477,7 @@ MonoBehaviour:
   rayPoint: {x: 0, y: 0, z: 0}
   isPlacingCannon: 0
   selectedCannonType: 
-  currentCannonInstance: {fileID: 0}
+  currentCannonInstance: {fileID: 1765063770}
 --- !u!114 &1034705559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,8 +503,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ca3d96614122d4aa9c051a47912194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: 0.5
-  gameCamera: {fileID: 1765063773}
 --- !u!1 &1075311311
 GameObject:
   m_ObjectHideFlags: 0
