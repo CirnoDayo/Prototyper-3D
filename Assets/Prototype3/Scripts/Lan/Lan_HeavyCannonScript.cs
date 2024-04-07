@@ -11,11 +11,11 @@ public class Lan_HeavyCannonScript : MonoBehaviour
     [SerializeField] private float fireRate = 1f;
     [SerializeField] private float fireCountdown = 0f;
     [SerializeField] private float range = 15f;
+    [SerializeField] private float headTurningSpeed = 10f;
     
     [Header("Unity Setup Fields")]
     [SerializeField] string enemyTag = "EnemyWithBomb";
     [SerializeField] Transform partToRotate;
-    [SerializeField] private float headTurningSpeed = 10f;
     [SerializeField] private GameObject bombPrefab;
     [SerializeField] private Transform firePoint;   
     

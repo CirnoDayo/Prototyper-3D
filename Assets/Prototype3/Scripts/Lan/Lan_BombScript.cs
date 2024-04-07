@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,9 @@ using UnityEngine;
 public class Lan_BombScript : MonoBehaviour
 {
     private Transform target;
+    
     [SerializeField] private float travelSpeed = 70f;
+    [SerializeField] float bombExplosionRange = 0f;
     [SerializeField] private GameObject bombShatterEffect;
 
     public void SeekEnemy(Transform _target)
@@ -31,7 +34,7 @@ public class Lan_BombScript : MonoBehaviour
         }
         //The bomb movement.
         transform.Translate(direction.normalized * distanceThisFrame, Space.World);
-        
+        transform.LookAt(target);
     }
 
     void HitTarget()
@@ -39,7 +42,39 @@ public class Lan_BombScript : MonoBehaviour
         //When hit enemy, instantiate the effect so players know that they hit the enemy.
         GameObject effectInstance = (GameObject)Instantiate(bombShatterEffect, transform.position, transform.rotation);
         Destroy(effectInstance,2f);
-        Destroy(target.gameObject);
+        if (bombExplosionRange > 0f)
+        {
+            Explode();
+        }
+        else
+        {
+            Damage(target);
+        }
+        
         Destroy(gameObject);
+    }
+
+    void Explode()
+    {
+        Collider[] colldiers = Physics.OverlapSphere(transform.position, bombExplosionRange);
+        foreach (Collider collider in colldiers)
+        {
+            if (collider.CompareTag("NormalEnemy")) 
+            {
+                Debug.Log("collider name: " + collider.name + " collider tag: " + collider.tag);
+                Damage(collider.transform);
+            }
+        }
+    }
+
+    void Damage(Transform enemy)
+    {
+        Destroy(enemy.gameObject);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, bombExplosionRange);
     }
 }
