@@ -7,7 +7,8 @@ public class Akino_MapManager : MonoBehaviour
 {
     [Header("Game Objects")]
     public GameObject homeTile;
-    public GameObject[] mapTiles;
+    public List<GameObject> mapTiles;
+    public bool doorDeleted;
     [Header("Private")]
     [SerializeField] NavMeshSurface navigationMesh;
     [SerializeField] Quaternion[] rotations;
@@ -32,7 +33,7 @@ public class Akino_MapManager : MonoBehaviour
 
     public void UpdateMap()
     {
-        int tileIndex = Random.Range(0,mapTiles.Length);
+        int tileIndex = Random.Range(0,mapTiles.Count);
         Vector3 newTilePosition = lastSpawnedTile.transform.position + lastSpawnedTile.transform.forward * 50;
 
         int rotationIndex = Random.Range(0, rotations.Length);
