@@ -6,12 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a2256612-c251-4d8b-abf6-64df31131acb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prototyper-3D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prototyper-3D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Bomb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Bomb.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Bullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Bullet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_HeavyCannon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_HeavyCannon.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Sniper.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Sniper.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Lan.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Lan.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_BombScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_BombScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_HeavyCannonScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_HeavyCannonScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +21,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../10-seconds-before-the-deadline/[GDS4 - Prototype 1] 10 seconds before the deadline/Assets/Scripts/10 seconds before deadlines/HighlightingObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_EnemyBomb.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_HeavyCannonScript.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
@@ -111,7 +110,7 @@
       <workItem from="1712207100568" duration="6083000" />
       <workItem from="1712389915025" duration="8622000" />
       <workItem from="1712475799886" duration="3968000" />
-      <workItem from="1712544854517" duration="3238000" />
+      <workItem from="1712544854517" duration="10047000" />
     </task>
     <servers />
   </component>

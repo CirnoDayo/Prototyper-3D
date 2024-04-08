@@ -78,6 +78,7 @@ public class Lan_HeavyCannonScript : MonoBehaviour
     {
         GameObject bombGO = (GameObject) Instantiate(bombPrefab, firePoint.position, firePoint.rotation);
         Lan_BombScript bomb = bombGO.GetComponent<Lan_BombScript>();
+        
 
         if (bomb != null)
         {

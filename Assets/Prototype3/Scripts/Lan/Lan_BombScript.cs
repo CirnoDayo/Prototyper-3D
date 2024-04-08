@@ -10,7 +10,7 @@ public class Lan_BombScript : MonoBehaviour
     [SerializeField] private float travelSpeed = 70f;
     [SerializeField] float bombExplosionRange = 0f;
     [SerializeField] private GameObject bombShatterEffect;
-    [SerializeField] private int damageDealt = 20;
+    [SerializeField] private int damageDealt = 0;
 
     public void SeekEnemy(Transform _target)
     {
@@ -43,6 +43,7 @@ public class Lan_BombScript : MonoBehaviour
         //When hit enemy, instantiate the effect so players know that they hit the enemy.
         GameObject effectInstance = (GameObject)Instantiate(bombShatterEffect, transform.position, transform.rotation);
         Destroy(effectInstance,2f);
+        
         if (bombExplosionRange > 0f)
         {
             Explode();
@@ -50,9 +51,9 @@ public class Lan_BombScript : MonoBehaviour
         else
         {
             Damage(target);
+            
         }
         
-        Destroy(gameObject);
     }
 
     void Explode()
@@ -60,17 +61,31 @@ public class Lan_BombScript : MonoBehaviour
         Collider[] colldiers = Physics.OverlapSphere(transform.position, bombExplosionRange);
         foreach (Collider collider in colldiers)
         {
+            
             if (collider.CompareTag("NormalEnemy")) 
             {
-                Debug.Log("collider name: " + collider.name + " collider tag: " + collider.tag);
+                
                 Lan_EnemyScript e = collider.GetComponent<Lan_EnemyScript>();
-
                 if (e != null)
                 {
                     e.TakeDamge(damageDealt);
                 }
             }
+            else if (collider.CompareTag("EnemyWithBomb"))
+            {
+                Lan_EnemyScript e = collider.GetComponent<Lan_EnemyScript>();
+                if (e != null)
+                {
+                    e.TakeDamge(damageDealt);
+                }
+                Lan_EnemyBomb enemyBomb = collider.GetComponent<Lan_EnemyBomb>();
+                if (enemyBomb != null)
+                {
+                    enemyBomb.InteractWithAnotherBomb();
+                }
+            }
         }
+        Destroy();
     }
 
     void Damage(Transform enemy)
@@ -80,9 +95,24 @@ public class Lan_BombScript : MonoBehaviour
         if (e != null)
         {
             e.TakeDamge(damageDealt);
+            Lan_EnemyBomb enemyBomb = target.GetComponent<Lan_EnemyBomb>();
+            if (enemyBomb != null)
+            {
+              enemyBomb.InteractWithAnotherBomb();
+            }
+            else
+            {
+                return;
+            }
         }
+        Destroy();
         
         //Destroy(enemy.gameObject);
+    }
+
+    void Destroy()
+    {
+        
     }
 
     private void OnDrawGizmosSelected()
