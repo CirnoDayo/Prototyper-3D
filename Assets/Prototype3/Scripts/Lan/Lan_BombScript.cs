@@ -10,6 +10,7 @@ public class Lan_BombScript : MonoBehaviour
     [SerializeField] private float travelSpeed = 70f;
     [SerializeField] float bombExplosionRange = 0f;
     [SerializeField] private GameObject bombShatterEffect;
+    [SerializeField] private int damageDealt = 20;
 
     public void SeekEnemy(Transform _target)
     {
@@ -62,14 +63,26 @@ public class Lan_BombScript : MonoBehaviour
             if (collider.CompareTag("NormalEnemy")) 
             {
                 Debug.Log("collider name: " + collider.name + " collider tag: " + collider.tag);
-                Damage(collider.transform);
+                Lan_EnemyScript e = collider.GetComponent<Lan_EnemyScript>();
+
+                if (e != null)
+                {
+                    e.TakeDamge(damageDealt);
+                }
             }
         }
     }
 
     void Damage(Transform enemy)
     {
-        Destroy(enemy.gameObject);
+        Lan_EnemyScript e = enemy.GetComponent<Lan_EnemyScript>();
+
+        if (e != null)
+        {
+            e.TakeDamge(damageDealt);
+        }
+        
+        //Destroy(enemy.gameObject);
     }
 
     private void OnDrawGizmosSelected()
