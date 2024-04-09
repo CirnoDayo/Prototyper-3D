@@ -798,6 +798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f17cf69e2c410240abb083103f66ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapManager: {fileID: 0}
 --- !u!1 &1008755268000388287
 GameObject:
   m_ObjectHideFlags: 0
@@ -6598,6 +6599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f17cf69e2c410240abb083103f66ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapManager: {fileID: 0}
 --- !u!1 &6235639312637377045
 GameObject:
   m_ObjectHideFlags: 0
@@ -8319,7 +8321,6 @@ GameObject:
   - component: {fileID: 1730939332054192104}
   - component: {fileID: 1527038960409844294}
   - component: {fileID: 6139416876753705514}
-  - component: {fileID: 1460579979026116152}
   m_Layer: 0
   m_Name: Straight_1
   m_TagString: Untagged
@@ -8515,22 +8516,6 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 0
   m_AffectedAgents: ffffffff
---- !u!114 &1460579979026116152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7927483621283959747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaaf3d487e57fe34f9804e2a6eb863ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doors: []
-  doorLayer:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!1 &8205873702113879781
 GameObject:
   m_ObjectHideFlags: 0

@@ -539,18 +539,11 @@ MonoBehaviour:
   homeTile: {fileID: 7927483621283959747, guid: 259a4cd39e4970148be6f974ed17b8a8, type: 3}
   mapTiles:
   - {fileID: 7927483621283959747, guid: e407f98d41421eb41af0d5e1e2728c37, type: 3}
-  - {fileID: 7927483621283959747, guid: 9111ef25b1f6e4940830d8b077055ba3, type: 3}
   - {fileID: 7927483621283959747, guid: d3e76a8c9944b404cad439c93f819b11, type: 3}
-  - {fileID: 7927483621283959747, guid: 114dbc0387f1a7f4c89dc17d80a546e5, type: 3}
-  - {fileID: 7927483621283959747, guid: da1ca7b200cdd8545a2649e6827aaa25, type: 3}
-  - {fileID: 7927483621283959747, guid: 3262d9745eed0ee4f854cc53ba9f3ac9, type: 3}
   - {fileID: 7927483621283959747, guid: 47ae82e1a6891524eb9938fe775f60f8, type: 3}
-  - {fileID: 7927483621283959747, guid: 8d9fedba826856e4f97173a873259e8d, type: 3}
   - {fileID: 7927483621283959747, guid: d72b4ae3f3ce42a4f9b58357767538d1, type: 3}
-  - {fileID: 7927483621283959747, guid: cf73324b08d535348b107c1845b04d47, type: 3}
-  - {fileID: 7927483621283959747, guid: 1d89d8b1f10f696438a4641df8d7b8e5, type: 3}
-  - {fileID: 7927483621283959747, guid: cd0106fd653e89d4dbe39562e6570795, type: 3}
   doorDeleted: 0
+  nextTileRotation: {x: 0, y: 0, z: 0, w: 0}
   navigationMesh: {fileID: 1034705560}
   rotations: []
   lastSpawnedTile: {fileID: 0}
@@ -880,10 +873,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

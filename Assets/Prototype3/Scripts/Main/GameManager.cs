@@ -7,6 +7,11 @@ public class GameManager : MonoBehaviour
 {
     public KeyCode restartButton = KeyCode.R;
 
+    private void Start()
+    {
+        UnityEditor.Selection.activeGameObject = this.gameObject;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(restartButton))

@@ -8,7 +8,10 @@ public class Akino_MapManager : MonoBehaviour
     [Header("Game Objects")]
     public GameObject homeTile;
     public List<GameObject> mapTiles;
-    public bool doorDeleted;
+    public bool doorDeleted = true;
+    [Header("Variables")]
+    public GameObject instancedTile;
+    public Quaternion nextTileRotation;
     [Header("Private")]
     [SerializeField] NavMeshSurface navigationMesh;
     [SerializeField] Quaternion[] rotations;
@@ -25,21 +28,59 @@ public class Akino_MapManager : MonoBehaviour
 
     private void Start()
     {
-        int rotationIndex = Random.Range(0,rotations.Length);
+        int rotationIndex = Random.Range(0, rotations.Length);
         Quaternion homeRotation = rotations[rotationIndex];
         lastSpawnedTile = Instantiate(homeTile, Vector3.zero, homeRotation);
         UpdateNavMesh();
     }
 
+    /*private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Backspace) && !doorDeleted)
+        {
+            Destroy(instancedTile);
+            UpdateMap();
+        }
+    }*/
+    //
     public void UpdateMap()
     {
-        int tileIndex = Random.Range(0,mapTiles.Count);
+        int tileIndex = Random.Range(0, mapTiles.Count);
         Vector3 newTilePosition = lastSpawnedTile.transform.position + lastSpawnedTile.transform.forward * 50;
-
         int rotationIndex = Random.Range(0, rotations.Length);
         Quaternion tileRotation = rotations[rotationIndex];
+        GameObject instanced;
+        instanced = Instantiate(mapTiles[tileIndex], newTilePosition, tileRotation);
+        if (!doorDeleted)
+        {
+            Debug.Log("Rerolling");
+            StartCoroutine(RerollTile(instanced));
+        }
+        else
+        {
+            StopAllCoroutines();
+            doorDeleted = false;
+            lastSpawnedTile = instanced;
+            UpdateNavMesh();
+        }
+    }
 
-        lastSpawnedTile = Instantiate(mapTiles[tileIndex], newTilePosition, tileRotation);
+    IEnumerator RerollTile(GameObject instanced)
+    {
+        Debug.Log("Is calling UpdateMap");
+        
+        if (instanced == null) 
+        {
+            Debug.Log("null");
+            doorDeleted = false;
+            yield break;
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.1f);
+            UpdateMap();
+            Destroy(instanced);
+        }
     }
 
     public void UpdateNavMesh()

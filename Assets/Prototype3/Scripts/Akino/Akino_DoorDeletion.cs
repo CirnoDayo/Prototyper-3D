@@ -4,17 +4,34 @@ using UnityEngine;
 
 public class Akino_DoorDeletion : MonoBehaviour
 {
-    Akino_MapManager mapManager;
-    private void Start()
+    public Akino_MapManager mapManager;
+    private BoxCollider boxCollider;
+
+    private void Awake()
     {
-        mapManager = GetComponent<Akino_MapManager>();
+        mapManager = FindObjectOfType<Akino_MapManager>();
+        boxCollider = GetComponent<BoxCollider>();
+    }
+
+    private void Update()
+    {
+        if (!Object.ReferenceEquals(this, null) && !boxCollider.isTrigger && mapManager.doorDeleted)
+        {
+            boxCollider.isTrigger = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("yep");
-        //mapManager.doorDeleted = true;
-        //Destroy(other.gameObject);
-        //Destroy(gameObject);
+        Debug.Log(other);
+        if (other != null && !mapManager.doorDeleted)
+        {
+            Vector3 direction = transform.localPosition;
+            float angle = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;
+            mapManager.nextTileRotation = Quaternion.Euler(0, angle, 0);
+            other.GetComponent<BoxCollider>().enabled = false;
+            GetComponent<BoxCollider>().enabled = false;
+            mapManager.doorDeleted = true;
+        }
     }
 }
