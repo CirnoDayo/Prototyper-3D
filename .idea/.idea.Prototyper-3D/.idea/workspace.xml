@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a2256612-c251-4d8b-abf6-64df31131acb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prototyper-3D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prototyper-3D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Lan.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Lan.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_BombScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_BombScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_EnemyBomb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_EnemyBomb.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_EnemyScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_EnemyScript.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +106,7 @@
       <workItem from="1712389915025" duration="8622000" />
       <workItem from="1712475799886" duration="3968000" />
       <workItem from="1712544854517" duration="10047000" />
-      <workItem from="1712644447443" duration="6681000" />
+      <workItem from="1712644447443" duration="7994000" />
     </task>
     <servers />
   </component>

@@ -16,8 +16,7 @@ public class Lan_EnemyBomb : MonoBehaviour
 
     public void InteractWithAnotherBomb()
     {
-        if (hasExploded) return; // Exit if this bomb has already exploded
-
+        if (hasExploded) return; // Exit if this bomb has already ex
         hasExploded = true; // Set the flag to prevent further explosions
         ChainExplode();
         
@@ -25,7 +24,6 @@ public class Lan_EnemyBomb : MonoBehaviour
     public void DamageBuff()
     {
         if (hasExploded) return; // Exit if this bomb has already exploded
-
        hasExploded = true; 
         DamageBuffChainExplode();
     }
