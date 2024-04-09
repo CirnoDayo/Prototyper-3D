@@ -34,15 +34,11 @@ public class Akino_MapManager : MonoBehaviour
         UpdateNavMesh();
     }
 
-    /*private void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Backspace) && !doorDeleted)
-        {
-            Destroy(instancedTile);
-            UpdateMap();
-        }
-    }*/
-    //
+        
+    }
+
     public void UpdateMap()
     {
         int tileIndex = Random.Range(0, mapTiles.Count);
@@ -51,6 +47,7 @@ public class Akino_MapManager : MonoBehaviour
         Quaternion tileRotation = rotations[rotationIndex];
         GameObject instanced;
         instanced = Instantiate(mapTiles[tileIndex], newTilePosition, tileRotation);
+        // reroll
         if (!doorDeleted)
         {
             Debug.Log("Rerolling");
@@ -63,6 +60,7 @@ public class Akino_MapManager : MonoBehaviour
             lastSpawnedTile = instanced;
             UpdateNavMesh();
         }
+        // /reroll
     }
 
     IEnumerator RerollTile(GameObject instanced)
