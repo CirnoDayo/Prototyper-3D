@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.AI.Navigation;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Akino_MapManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class Akino_MapManager : MonoBehaviour
     public List<GameObject> mapTiles;
     public bool doorDeleted = true;
     [Header("Variables")]
+    public bool rerolling;
     public GameObject instancedTile;
     public Quaternion nextTileRotation;
     [Header("Private")]
@@ -36,49 +38,40 @@ public class Akino_MapManager : MonoBehaviour
 
     private void Update()
     {
-        
+        if (rerolling)
+        {
+            if (!doorDeleted)
+            {
+                int tileIndex = Random.Range(0, mapTiles.Count);
+                Vector3 newTilePosition = lastSpawnedTile.transform.position + lastSpawnedTile.transform.forward * 50;
+                int rotationIndex = Random.Range(0, rotations.Length);
+                Quaternion tileRotation = rotations[rotationIndex];
+                Destroy(instancedTile);
+                StartCoroutine(RerollTile(tileIndex, newTilePosition, tileRotation));
+            }
+            else
+            {
+                lastSpawnedTile = instancedTile;
+                instancedTile = null;
+                Debug.Log("finished");
+                UpdateNavMesh();
+                rerolling = false;
+                doorDeleted = false;
+            }
+        }
+    }
+
+    IEnumerator RerollTile(int tileIndex, Vector3 newTilePosition, Quaternion tileRotation)
+    {
+        rerolling = false;
+        instancedTile = Instantiate(mapTiles[tileIndex], newTilePosition, tileRotation);
+        yield return new WaitForSeconds(0.1f);
+        rerolling = true;
     }
 
     public void UpdateMap()
     {
-        int tileIndex = Random.Range(0, mapTiles.Count);
-        Vector3 newTilePosition = lastSpawnedTile.transform.position + lastSpawnedTile.transform.forward * 50;
-        int rotationIndex = Random.Range(0, rotations.Length);
-        Quaternion tileRotation = rotations[rotationIndex];
-        GameObject instanced;
-        instanced = Instantiate(mapTiles[tileIndex], newTilePosition, tileRotation);
-        // reroll
-        if (!doorDeleted)
-        {
-            Debug.Log("Rerolling");
-            StartCoroutine(RerollTile(instanced));
-        }
-        else
-        {
-            StopAllCoroutines();
-            doorDeleted = false;
-            lastSpawnedTile = instanced;
-            UpdateNavMesh();
-        }
-        // /reroll
-    }
-
-    IEnumerator RerollTile(GameObject instanced)
-    {
-        Debug.Log("Is calling UpdateMap");
-        
-        if (instanced == null) 
-        {
-            Debug.Log("null");
-            doorDeleted = false;
-            yield break;
-        }
-        else
-        {
-            yield return new WaitForSeconds(0.1f);
-            UpdateMap();
-            Destroy(instanced);
-        }
+        rerolling = true;
     }
 
     public void UpdateNavMesh()

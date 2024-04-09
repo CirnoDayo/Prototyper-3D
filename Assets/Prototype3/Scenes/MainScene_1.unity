@@ -543,6 +543,8 @@ MonoBehaviour:
   - {fileID: 7927483621283959747, guid: 47ae82e1a6891524eb9938fe775f60f8, type: 3}
   - {fileID: 7927483621283959747, guid: d72b4ae3f3ce42a4f9b58357767538d1, type: 3}
   doorDeleted: 0
+  rerolling: 0
+  instancedTile: {fileID: 0}
   nextTileRotation: {x: 0, y: 0, z: 0, w: 0}
   navigationMesh: {fileID: 1034705560}
   rotations: []

@@ -23,13 +23,13 @@ public class Akino_DoorDeletion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other);
         if (other != null && !mapManager.doorDeleted)
         {
             Vector3 direction = transform.localPosition;
             float angle = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;
             mapManager.nextTileRotation = Quaternion.Euler(0, angle, 0);
-            other.GetComponent<BoxCollider>().enabled = false;
+            Destroy(other.gameObject);
+            Destroy(this);
             GetComponent<BoxCollider>().enabled = false;
             mapManager.doorDeleted = true;
         }
