@@ -16,7 +16,7 @@ public class Lan_BombScript : MonoBehaviour
     {
         target = _target;
     }
-    void Update()
+    void Update()//Enemy movement
     {
         //Destroy when there is no enemy
         if (target == null)
@@ -38,7 +38,7 @@ public class Lan_BombScript : MonoBehaviour
         transform.LookAt(target);
     }
 
-    void HitTarget()
+    void HitTarget() //Bullet Hit target detector
     {
         //When hit enemy, instantiate the effect so players know that they hit the enemy.
         GameObject effectInstance = (GameObject)Instantiate(bombShatterEffect, transform.position, transform.rotation);
@@ -47,13 +47,15 @@ public class Lan_BombScript : MonoBehaviour
         if (bombExplosionRange > 0f)
         {
             Explode();
+            
         }
         else
         {
-            Damage(target);
+            DamageBuff(target);
             
         }
         
+        Destroy(gameObject);
     }
 
     void Explode()
@@ -85,27 +87,20 @@ public class Lan_BombScript : MonoBehaviour
                 }
             }
         }
-        Destroy();
     }
 
-    void Damage(Transform enemy)
+    void DamageBuff(Transform enemy)
     {
         Lan_EnemyScript e = enemy.GetComponent<Lan_EnemyScript>();
 
         if (e != null)
         {
-            e.TakeDamge(damageDealt);
             Lan_EnemyBomb enemyBomb = target.GetComponent<Lan_EnemyBomb>();
             if (enemyBomb != null)
             {
-              enemyBomb.InteractWithAnotherBomb();
-            }
-            else
-            {
-                return;
+              enemyBomb.DamageBuff();
             }
         }
-        Destroy();
         
         //Destroy(enemy.gameObject);
     }

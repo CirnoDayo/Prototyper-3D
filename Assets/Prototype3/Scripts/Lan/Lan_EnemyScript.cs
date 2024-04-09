@@ -16,6 +16,8 @@ public class Lan_EnemyScript : MonoBehaviour
         }
     }
 
+   
+
     void Die()
     {
         Destroy(gameObject);
