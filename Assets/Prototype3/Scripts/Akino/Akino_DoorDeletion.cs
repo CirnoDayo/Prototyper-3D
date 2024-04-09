@@ -6,7 +6,7 @@ public class Akino_DoorDeletion : MonoBehaviour
 {
     public Akino_MapManager mapManager;
     private BoxCollider boxCollider;
-    private bool touchedGrass;
+    public bool touchedGrass;
 
     private void Awake()
     {
@@ -33,7 +33,7 @@ public class Akino_DoorDeletion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if ((other.gameObject.layer != LayerMask.NameToLayer("Ground")) && !touchedGrass)
+        if (other != null && (other.gameObject.layer != LayerMask.NameToLayer("Ground")) && !touchedGrass)
         {
             Vector3 direction = transform.localPosition;
             Destroy(other.gameObject);

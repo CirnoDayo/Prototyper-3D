@@ -19,6 +19,7 @@ public class Akino_MapManager : MonoBehaviour
     [SerializeField] NavMeshSurface navigationMesh;
     [SerializeField] Quaternion[] rotations;
     [SerializeField] GameObject lastSpawnedTile;
+    [SerializeField] Akino_DoorDeletion doorScript;
 
     private void Awake()
     {
@@ -35,14 +36,21 @@ public class Akino_MapManager : MonoBehaviour
         Quaternion homeRotation = rotations[rotationIndex];
         lastSpawnedTile = Instantiate(homeTile, Vector3.zero, homeRotation);
         doorDirection = lastSpawnedTile.transform;
+        doorScript = lastSpawnedTile.GetComponentInChildren<Akino_DoorDeletion>();
+
         UpdateNavMesh();
     }
 
     private void Update()
     {
+        if (doorScript == null)
+        {
+            doorScript = doorDirection.GetComponent<Akino_DoorDeletion>();
+        }
+
         if (rerolling)
         {
-            if (!doorDeleted)
+            if (!doorDeleted || doorScript.touchedGrass)
             {
                 int tileIndex = Random.Range(0, mapTiles.Count);
                 Vector3 newTilePosition = lastSpawnedTile.transform.position + doorDirection.rotation * new Vector3(0f, 0f, 1f) * 50;
