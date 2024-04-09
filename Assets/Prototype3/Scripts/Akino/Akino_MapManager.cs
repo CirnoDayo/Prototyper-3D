@@ -13,6 +13,7 @@ public class Akino_MapManager : MonoBehaviour
     [Header("Variables")]
     public bool rerolling;
     public GameObject instancedTile;
+    public Transform doorDirection;
     public Quaternion nextTileRotation;
     [Header("Private")]
     [SerializeField] NavMeshSurface navigationMesh;
@@ -33,6 +34,7 @@ public class Akino_MapManager : MonoBehaviour
         int rotationIndex = Random.Range(0, rotations.Length);
         Quaternion homeRotation = rotations[rotationIndex];
         lastSpawnedTile = Instantiate(homeTile, Vector3.zero, homeRotation);
+        doorDirection = lastSpawnedTile.transform;
         UpdateNavMesh();
     }
 
@@ -43,7 +45,7 @@ public class Akino_MapManager : MonoBehaviour
             if (!doorDeleted)
             {
                 int tileIndex = Random.Range(0, mapTiles.Count);
-                Vector3 newTilePosition = lastSpawnedTile.transform.position + lastSpawnedTile.transform.forward * 50;
+                Vector3 newTilePosition = lastSpawnedTile.transform.position + doorDirection.rotation * new Vector3(0f, 0f, 1f) * 50;
                 int rotationIndex = Random.Range(0, rotations.Length);
                 Quaternion tileRotation = rotations[rotationIndex];
                 Destroy(instancedTile);
