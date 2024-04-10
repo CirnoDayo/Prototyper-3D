@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a2256612-c251-4d8b-abf6-64df31131acb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prototyper-3D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prototyper-3D/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Lan_MainScene2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Lan_MainScene2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Akino/Akino_MonsterMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Akino/Akino_MonsterMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_EnemyScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_EnemyScript.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,6 +112,7 @@
       <workItem from="1712544854517" duration="10047000" />
       <workItem from="1712644447443" duration="7994000" />
       <workItem from="1712662911499" duration="4125000" />
+      <workItem from="1712731094539" duration="2320000" />
     </task>
     <servers />
   </component>
