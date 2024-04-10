@@ -479,7 +479,7 @@ MonoBehaviour:
   rayPoint: {x: 0, y: 0, z: 0}
   isPlacingCannon: 0
   selectedCannonType: 
-  currentCannonInstance: {fileID: 0}
+  currentCannonInstance: {fileID: 1765063770}
 --- !u!114 &1034705559
 MonoBehaviour:
   m_ObjectHideFlags: 0
