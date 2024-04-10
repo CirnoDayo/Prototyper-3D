@@ -2,44 +2,58 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Lan_WaveSpawner : MonoBehaviour
 {
     [Header("Unity Set up")]
-    [SerializeField] private Transform enemyPrefab;
-    [SerializeField] private Transform spawnPoint;
+    public Transform enemyPrefab;
+    public Vector3 spawnPoint;
 
     [Header("Attributes")]
-    [SerializeField] private float timeBetweenWaves = 5f;
-    [SerializeField] private float countdown = 2f;
-    [SerializeField] private int waveIndex = 0;
+    //public float timeBetweenWaves = 5f;
+    //public float countdown = 2f;
+    public int waveIndex = 0;
+
+    [Header("Private")]
+    [SerializeField] Akino_MapManager mapManager;
+
+    private void Start()
+    {
+        mapManager = GetComponent<Akino_MapManager>();
+    }
 
     private void Update()
     {
-        if (countdown <= 0f)
+        spawnPoint = mapManager.doorDirection.position;
+        /*if (countdown <= 0f)
         {
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
         }
+        countdown -= Time.deltaTime;*/
+    }
 
-        countdown -= Time.deltaTime;
+    public void SpawnWaveInput()
+    {
+        StartCoroutine(SpawnWave());
     }
 
     IEnumerator SpawnWave()
     {
         
         waveIndex++;
-        Debug.Log("Wave Imcoming!");
+        Debug.Log("Wave Incoming!");
         for (int i = 0; i < waveIndex; i++)
         {
+            yield return new WaitForSeconds(1f);
             SpawnEnemy();
-            yield return new WaitForSeconds(0.5f);
         }
 
     }
 
     void SpawnEnemy()
     {
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(enemyPrefab, spawnPoint, Quaternion.identity);
     }
 }

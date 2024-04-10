@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using Unity.AI.Navigation;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Akino_MapManager : MonoBehaviour
 {
     [Header("Game Objects")]
     public GameObject homeTile;
     public List<GameObject> mapTiles;
-    public bool doorDeleted = true;
+    public GameObject instancedTile;
+    public Button startButton;
     [Header("Variables")]
     public bool rerolling;
-    public GameObject instancedTile;
+    public bool doorDeleted = true;
     public Transform doorDirection;
     public Quaternion nextTileRotation;
     [Header("Private")]
@@ -45,6 +47,7 @@ public class Akino_MapManager : MonoBehaviour
     {
         if (rerolling)
         {
+            startButton.interactable = false;
             if (!doorDeleted || doorScript.touchedGrass)
             {
                 int tileIndex = Random.Range(0, mapTiles.Count);
@@ -64,6 +67,7 @@ public class Akino_MapManager : MonoBehaviour
                 UpdateNavMesh();
                 rerolling = false;
                 doorDeleted = false;
+                startButton.gameObject.SetActive(false);
             }
         }
     }

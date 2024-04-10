@@ -2,17 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Lan_EnemyScript : MonoBehaviour
 {
     [Header("Unity Set up")]
-    [SerializeField] Transform endPoint; 
-    private Lan_LivesUI livesUI; 
+    [SerializeField] Vector3 endPoint; 
+    public Lan_LivesUI livesUI; 
     
     [Header("Attributes")]
+    [SerializeField] NavMeshAgent agent;
     [SerializeField] private int enemyHealthPoint = 100;
-    [SerializeField] private float detectionRange = 5f; 
-
+    [SerializeField] private float detectionRange = 5f;
 
     private void Start()
     {
@@ -21,8 +22,7 @@ public class Lan_EnemyScript : MonoBehaviour
         {
             Debug.Log("Can not find Lan_LivesUI");
         }
-        endPoint = GameObject.Find("Lan_EndPath").transform;
-        
+        endPoint = new Vector3(0,0,0);
     }
 
     public void TakeDamge(int amount)
@@ -36,20 +36,20 @@ public class Lan_EnemyScript : MonoBehaviour
     }
     private void Update()
     {
+        agent.SetDestination(endPoint);
         DetectEndPoint();
-        
     }
     
     private void DetectEndPoint()
     {
         RaycastHit hit;
-        Vector3 direction = endPoint.position - transform.position;
+        Vector3 direction = endPoint - transform.position;
 
-       
+        
         if (Physics.Raycast(transform.position, direction, out hit, detectionRange))
         {
             
-            if (hit.collider.gameObject == endPoint.gameObject)
+            if (hit.collider.gameObject.transform.position == endPoint)
             {
                 
                 livesUI.EnemyReachedEnd();

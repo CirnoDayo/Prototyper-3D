@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5161676702944910704}
   - component: {fileID: 7869123270902475970}
   - component: {fileID: 8008518059422262135}
-  - component: {fileID: 3835143714907963514}
   - component: {fileID: 6178862244670085666}
   m_Layer: 6
   m_Name: LanTesting_Monster
@@ -132,20 +131,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 2
---- !u!114 &3835143714907963514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6168709814339320168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c83216def494e9b4f8c50def4413ecfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 8008518059422262135}
-  target: {fileID: 3193768415780822217, guid: 276ef06046097254fb4368b3991e87ce, type: 3}
 --- !u!114 &6178862244670085666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba61c489a6368ff429b99cc64a7716a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPoint: {fileID: 0}
+  endPoint: {x: 0, y: 0, z: 0}
+  livesUI: {fileID: 0}
+  agent: {fileID: 8008518059422262135}
   enemyHealthPoint: 100
   detectionRange: 5
