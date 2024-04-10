@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,10 +9,12 @@ public class CannonManager : MonoBehaviour
     public int heavyCannonLimit = 2;
     private int heavyCannonCount = 0;
     public GameObject heavyCannonPrefab;
+    public GameObject fakeHeavyCannonPrefab;
     [Header("Sniper")]
     public int sniperLimit = 2;
     private int sniperCount = 0;
     public GameObject sniperPrefab;
+    public GameObject fakeSniperPrefab;
     [Space(16)]
     [Header("UI")]
     public Button sniperButton;
@@ -40,7 +43,7 @@ public class CannonManager : MonoBehaviour
         if (hitInfo.collider != null)
         {
             griddedPosition = hitInfo.collider.transform.position;
-            griddedPosition.y += 2;
+            griddedPosition.y += 5;
         }
 
         if (isPlacingCannon && currentCannonInstance != null)
@@ -51,7 +54,7 @@ public class CannonManager : MonoBehaviour
             {
                 if (hit)
                 {
-                    griddedPosition.y += 1;
+                    griddedPosition.y += 2;
                     InstantiateAtPosition(griddedPosition);
                 }
 
@@ -72,11 +75,11 @@ public class CannonManager : MonoBehaviour
 
     private void InstantiateAtPosition(Vector3 position)
     {
-        GameObject prefab = selectedCannonType == "Sniper" ? sniperPrefab : heavyCannonPrefab;
+        GameObject prefab = selectedCannonType == "Lan_Sniper" ? sniperPrefab : heavyCannonPrefab;
         GameObject newInstance = Instantiate(prefab, position, Quaternion.identity);
         newInstance.GetComponent<Renderer>().material = OriginalMaterial(newInstance);
 
-        if (selectedCannonType == "Sniper")
+        if (selectedCannonType == "Lan_Sniper")
         {
             sniperCount++;
             sniperText.text = $"{sniperLimit - sniperCount}";
@@ -86,7 +89,7 @@ public class CannonManager : MonoBehaviour
                 StopPlacingCannon();
             }
         }
-        else if (selectedCannonType == "HeavyCannon")
+        else if (selectedCannonType == "Lan_HeavyCannon")
         {
             heavyCannonCount++;
             heavyCannonText.text = $"{heavyCannonLimit - heavyCannonCount}";
@@ -123,7 +126,7 @@ public class CannonManager : MonoBehaviour
         if (!isPlacingCannon)
         {
             selectedCannonType = cannonType;
-            GameObject prefab = cannonType == "Sniper" ? sniperPrefab : heavyCannonPrefab;
+            GameObject prefab = cannonType == "Lan_Sniper" ? fakeSniperPrefab : fakeHeavyCannonPrefab;
             currentCannonInstance = Instantiate(prefab);
             ApplyTransparentMaterial(currentCannonInstance);
             isPlacingCannon = true;
@@ -141,7 +144,7 @@ public class CannonManager : MonoBehaviour
 
     private Material OriginalMaterial(GameObject cannonInstance)
     {
-        GameObject prefab = cannonInstance.name.Contains("Sniper") ? sniperPrefab : heavyCannonPrefab;
+        GameObject prefab = cannonInstance.name.Contains("Lan_Sniper") ? sniperPrefab : heavyCannonPrefab;
         return prefab.GetComponent<Renderer>().sharedMaterial;
     }
 }

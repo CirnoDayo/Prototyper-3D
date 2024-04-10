@@ -6,11 +6,11 @@ public class UICannonSelect : MonoBehaviour
 
     public void SelectSniper()
     {
-        cannonManagerScript.InstantiateCannonOfType("Sniper");
+        cannonManagerScript.InstantiateCannonOfType("Lan_Sniper");
     }
 
     public void SelectHeavyCannon()
     {
-        cannonManagerScript.InstantiateCannonOfType("HeavyCannon");
+        cannonManagerScript.InstantiateCannonOfType("Lan_HeavyCannon");
     }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6817090362361560705}
   - component: {fileID: 7447277884294527668}
   m_Layer: 2
-  m_Name: Lan_Sniper
+  m_Name: LanFake_Sniper 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952435989297556745}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b3a3f05cc3f33f4e96aff74bdf47c84, type: 3}
   m_Name: 
@@ -95,7 +95,6 @@ MonoBehaviour:
   fireCountdown: 0
   range: 50
   headTurningSpeed: 10
-  shootingDelayTime: 0.5
   enemyTag: EnemyWithBomb
   partToRotate: {fileID: 5440630301389881359}
   bombPrefab: {fileID: 4474856517676475251, guid: e0ce54d0b79947f4bb9df4e8bd1baa22, type: 3}

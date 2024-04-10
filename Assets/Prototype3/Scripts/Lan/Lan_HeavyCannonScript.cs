@@ -12,6 +12,7 @@ public class Lan_HeavyCannonScript : MonoBehaviour
     [SerializeField] private float fireCountdown = 0f;
     [SerializeField] private float range = 15f;
     [SerializeField] private float headTurningSpeed = 10f;
+    [SerializeField] private float shootingDelayTime = 1f;
     
     [Header("Unity Setup Fields")]
     [SerializeField] string enemyTag = "EnemyWithBomb";
@@ -67,15 +68,16 @@ public class Lan_HeavyCannonScript : MonoBehaviour
         //Cannon countdown
         if (fireCountdown <= 0f)
         {
-            Shoot();
+            StartCoroutine(Shoot());
             fireCountdown = 1f / fireRate;
         }
         fireCountdown -= Time.deltaTime;
 
     }
 
-    void Shoot()
+    IEnumerator Shoot()
     {
+        yield return new WaitForSeconds(shootingDelayTime);
         GameObject bombGO = (GameObject) Instantiate(bombPrefab, firePoint.position, firePoint.rotation);
         Lan_BombScript bomb = bombGO.GetComponent<Lan_BombScript>();
         
@@ -84,6 +86,8 @@ public class Lan_HeavyCannonScript : MonoBehaviour
         {
             bomb.SeekEnemy(target);
         }
+
+        yield return null;
     }
 
     private void OnDrawGizmosSelected() //Just color hehe

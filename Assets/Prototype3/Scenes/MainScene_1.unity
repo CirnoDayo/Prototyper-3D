@@ -464,9 +464,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heavyCannonLimit: 2
-  heavyCannonPrefab: {fileID: 7941443061983501256, guid: 52b8b500d746b8645b9b2255c44c6260, type: 3}
+  heavyCannonPrefab: {fileID: 8395588814246037527, guid: 6829cf323a76e854e98f3f42ab50f250, type: 3}
+  fakeHeavyCannonPrefab: {fileID: 8395588814246037527, guid: 9fce9e7e8a54bb0418e560c8a510ce76, type: 3}
   sniperLimit: 2
-  sniperPrefab: {fileID: 6070704050314606245, guid: ecd8ea2d8e84f1d49a452da1af7d0b01, type: 3}
+  sniperPrefab: {fileID: 952435989297556745, guid: 90ddcfe89dd789842a54a0a2f94065fe, type: 3}
+  fakeSniperPrefab: {fileID: 952435989297556745, guid: ce3ea9f08a5cd0544beb7a164e37cb84, type: 3}
   sniperButton: {fileID: 1924776407}
   heavyCannonButton: {fileID: 1019397369}
   sniperText: {fileID: 1599373250}
@@ -545,10 +547,12 @@ MonoBehaviour:
   doorDeleted: 0
   rerolling: 0
   instancedTile: {fileID: 0}
+  doorDirection: {fileID: 0}
   nextTileRotation: {x: 0, y: 0, z: 0, w: 0}
   navigationMesh: {fileID: 1034705560}
   rotations: []
   lastSpawnedTile: {fileID: 0}
+  doorScript: {fileID: 0}
 --- !u!114 &1034705562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1183,7 +1187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minZoom: 5
   maxZoom: 50
-  zoomSensitivity: 15
+  sensitivity: 10
 --- !u!81 &1765063772
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1392,11 +1396,11 @@ GameObject:
   - component: {fileID: 1914720866}
   m_Layer: 6
   m_Name: Monster
-  m_TagString: Untagged
+  m_TagString: EnemyWithBomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!195 &1914720865
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1426,7 +1430,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914720864}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c83216def494e9b4f8c50def4413ecfc, type: 3}
   m_Name: 
