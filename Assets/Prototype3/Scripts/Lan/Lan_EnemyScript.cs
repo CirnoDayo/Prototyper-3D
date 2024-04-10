@@ -21,6 +21,8 @@ public class Lan_EnemyScript : MonoBehaviour
         {
             Debug.Log("Can not find Lan_LivesUI");
         }
+        endPoint = GameObject.Find("Lan_EndPath").transform;
+        
     }
 
     public void TakeDamge(int amount)
@@ -35,6 +37,7 @@ public class Lan_EnemyScript : MonoBehaviour
     private void Update()
     {
         DetectEndPoint();
+        
     }
     
     private void DetectEndPoint()
