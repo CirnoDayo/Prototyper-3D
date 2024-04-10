@@ -7,7 +7,7 @@ public class Akino_CameraMovement : MonoBehaviour
 {
     public float minZoom = 5f;
     public float maxZoom = 50f;
-    [Range(0, 20)] public int zoomSensitivity = 10;
+    [Range(0, 20)] public int sensitivity = 10;
 
     Vector3 currentPosition;
     Vector3 movementVector;
@@ -24,7 +24,7 @@ public class Akino_CameraMovement : MonoBehaviour
         movementVector = Quaternion.Euler(0f, 45f, 0f) * movementVector;
         if (Input.GetMouseButton(1))
         {
-            transform.position += movementVector;
+            transform.position += movementVector * (Camera.main.orthographicSize / 5);
             Cursor.lockState = CursorLockMode.Locked;
         }
         else
@@ -33,7 +33,7 @@ public class Akino_CameraMovement : MonoBehaviour
         }
 
         float scroll = Input.GetAxis("Mouse ScrollWheel");
-        float size = Camera.main.orthographicSize - scroll * zoomSensitivity;
+        float size = Camera.main.orthographicSize - scroll * sensitivity;
         size = Mathf.Clamp(size, minZoom, maxZoom);
         Camera.main.orthographicSize = size;
     }

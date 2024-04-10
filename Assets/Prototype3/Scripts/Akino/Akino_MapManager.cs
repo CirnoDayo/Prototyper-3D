@@ -43,17 +43,13 @@ public class Akino_MapManager : MonoBehaviour
 
     private void Update()
     {
-        if (doorScript == null)
-        {
-            doorScript = doorDirection.GetComponent<Akino_DoorDeletion>();
-        }
-
         if (rerolling)
         {
             if (!doorDeleted || doorScript.touchedGrass)
             {
                 int tileIndex = Random.Range(0, mapTiles.Count);
-                Vector3 newTilePosition = lastSpawnedTile.transform.position + doorDirection.rotation * new Vector3(0f, 0f, 1f) * 50;
+                Vector3 newTilePosition = Vector3.zero;
+                    newTilePosition = lastSpawnedTile.transform.position + doorDirection.rotation * new Vector3(0f, 0f, 1f) * 50;
                 int rotationIndex = Random.Range(0, rotations.Length);
                 Quaternion tileRotation = rotations[rotationIndex];
                 Destroy(instancedTile);
@@ -63,11 +59,20 @@ public class Akino_MapManager : MonoBehaviour
             {
                 lastSpawnedTile = instancedTile;
                 instancedTile = null;
+                doorScript = null;
                 Debug.Log("finished");
                 UpdateNavMesh();
                 rerolling = false;
                 doorDeleted = false;
             }
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (doorScript == null)
+        {
+            doorScript = doorDirection.GetComponent<Akino_DoorDeletion>();
         }
     }
 
