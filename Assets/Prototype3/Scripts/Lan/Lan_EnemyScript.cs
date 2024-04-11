@@ -4,11 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
+
 public class Lan_EnemyScript : MonoBehaviour
 {
     [Header("Unity Set up")]
     [SerializeField] Vector3 endPoint; 
-    public Lan_LivesUI livesUI; 
+    public Lan_LivesUI livesUI;
+    
     
     [Header("Attributes")]
     [SerializeField] NavMeshAgent agent;
@@ -23,6 +26,9 @@ public class Lan_EnemyScript : MonoBehaviour
             Debug.Log("Can not find Lan_LivesUI");
         }
         endPoint = new Vector3(0,0,0);
+       
+        Lan_EventManager.EnemySpawned();
+        
     }
 
     public void TakeDamge(int amount)
@@ -53,13 +59,14 @@ public class Lan_EnemyScript : MonoBehaviour
             {
                 
                 livesUI.EnemyReachedEnd();
-                Destroy(gameObject);
+                Die();
             }
         }
     }
 
     void Die()
     {
+        Lan_EventManager.EnemyDestroyed();
         Destroy(gameObject);
     }
 }

@@ -3,17 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Lan_WaveSpawner : MonoBehaviour
 {
     [Header("Unity Set up")]
     public Transform enemyPrefab;
     public Vector3 spawnPoint;
+    public Button startButton;
 
-    [Header("Attributes")]
+    [Header("Attributes")] 
+    [SerializeField] float delayInstantiateTime = 0f;
     //public float timeBetweenWaves = 5f;
     //public float countdown = 2f;
-    public int waveIndex = 0;
+    [SerializeField] int waveIndex = 0;
+   
 
     [Header("Private")]
     [SerializeField] Akino_MapManager mapManager;
@@ -21,19 +25,32 @@ public class Lan_WaveSpawner : MonoBehaviour
     private void Start()
     {
         mapManager = GetComponent<Akino_MapManager>();
+        startButton = GameObject.Find("RoundChangeButton").GetComponent<Button>();
     }
+
+    #region SubscribeToCustomEvent
+
+    private void OnEnable()
+    {
+        Lan_EventManager.UpdateSpawnedPoint += TheNewSpawnPoint;
+    }
+
+    private void OnDisable()
+    {
+        Lan_EventManager.UpdateSpawnedPoint -= TheNewSpawnPoint;    
+    }
+    
+
+    #endregion
 
     private void Update()
     {
-        spawnPoint = mapManager.doorDirection.position;
-        /*if (countdown <= 0f)
-        {
-            StartCoroutine(SpawnWave());
-            countdown = timeBetweenWaves;
-        }
-        countdown -= Time.deltaTime;*/
+        
     }
-
+    private void TheNewSpawnPoint()
+    {
+        spawnPoint = mapManager.doorDirection.position;
+    }
     public void SpawnWaveInput()
     {
         StartCoroutine(SpawnWave());
@@ -41,19 +58,19 @@ public class Lan_WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-        
         waveIndex++;
-        Debug.Log("Wave Incoming!");
+        
+        //Debug.Log("Wave Incoming!");
         for (int i = 0; i < waveIndex; i++)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(delayInstantiateTime);
             SpawnEnemy();
+            
         }
-
     }
-
     void SpawnEnemy()
     {
+        
         Instantiate(enemyPrefab, spawnPoint, Quaternion.identity);
     }
 }

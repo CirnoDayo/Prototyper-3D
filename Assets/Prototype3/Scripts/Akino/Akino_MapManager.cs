@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.AI.Navigation;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Akino_MapManager : MonoBehaviour
 {
@@ -41,7 +43,10 @@ public class Akino_MapManager : MonoBehaviour
         doorScript = lastSpawnedTile.GetComponentInChildren<Akino_DoorDeletion>();
 
         UpdateNavMesh();
+        
     }
+
+    
 
     private void Update()
     {
@@ -67,13 +72,17 @@ public class Akino_MapManager : MonoBehaviour
                 UpdateNavMesh();
                 rerolling = false;
                 doorDeleted = false;
-                startButton.gameObject.SetActive(false);
+                Transform childOfTheLastSpawnedTile = lastSpawnedTile.transform.GetChild(0);
+                doorDirection = childOfTheLastSpawnedTile;
+                Lan_EventManager.NewSpawnedPoint();
+                
             }
         }
     }
 
     private void LateUpdate()
     {
+        
         if (doorScript == null)
         {
             doorScript = doorDirection.GetComponent<Akino_DoorDeletion>();
@@ -97,4 +106,5 @@ public class Akino_MapManager : MonoBehaviour
     {
         navigationMesh.BuildNavMesh();
     }
+    
 }

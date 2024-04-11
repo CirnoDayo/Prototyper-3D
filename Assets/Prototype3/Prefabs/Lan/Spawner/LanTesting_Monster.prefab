@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6178862244670085666}
   m_Layer: 6
   m_Name: LanTesting_Monster
-  m_TagString: Untagged
+  m_TagString: NormalEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,7 +120,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 20
-  m_Acceleration: 5
+  m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 180
   m_StoppingDistance: 0
