@@ -6,9 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="a2256612-c251-4d8b-abf6-64df31131acb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prototyper-3D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prototyper-3D/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Lan_MainScene2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scenes/Lan_MainScene2.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Akino/Akino_MonsterMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Akino/Akino_MonsterMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_EnemyScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_EnemyScript.cs" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Materials/Lan/Lan_Particle Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Materials/Lan/Lan_Particle Material.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Bomb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Bomb.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Bullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Bullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +30,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_EnemyBomb.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_HeavyCannonScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_LivesUI.cs" root0="FORCE_HIGHLIGHTING" />
+<<<<<<< Updated upstream
+=======
+    <setting file="file://$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_UIManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualeffectgraph@14.0.10/Editor/Core/VFXLibrary.cs" root0="SKIP_HIGHLIGHTING" />
+>>>>>>> Stashed changes
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
   <component name="ProjectColorInfo">{
@@ -113,6 +126,10 @@
       <workItem from="1712644447443" duration="7994000" />
       <workItem from="1712662911499" duration="4125000" />
       <workItem from="1712731094539" duration="2320000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1712817874995" duration="13092000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
