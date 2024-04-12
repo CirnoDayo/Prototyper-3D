@@ -15,7 +15,7 @@ public class Lan_HeavyCannonScript : MonoBehaviour
     [SerializeField] private float shootingDelayTime = 1f;
     
     [Header("Unity Setup Fields")]
-    [SerializeField] string enemyTag = "EnemyWithBomb";
+    [SerializeField] string enemyTag;
     [SerializeField] Transform partToRotate;
     [SerializeField] private GameObject bombPrefab;
     [SerializeField] private Transform firePoint;   

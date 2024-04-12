@@ -676,10 +676,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd7605a83af3d54c9e77407c62f5e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heavyCannonLimit: 2
+  heavyCannonLimit: 3
   heavyCannonPrefab: {fileID: 8395588814246037527, guid: 6829cf323a76e854e98f3f42ab50f250, type: 3}
   fakeHeavyCannonPrefab: {fileID: 8395588814246037527, guid: 9fce9e7e8a54bb0418e560c8a510ce76, type: 3}
-  sniperLimit: 2
+  sniperLimit: 3
   sniperPrefab: {fileID: 952435989297556745, guid: 90ddcfe89dd789842a54a0a2f94065fe, type: 3}
   fakeSniperPrefab: {fileID: 952435989297556745, guid: ce3ea9f08a5cd0544beb7a164e37cb84, type: 3}
   sniperButton: {fileID: 1924776407}
@@ -792,13 +792,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff6c0a6644a6cd84ca45e4dc00c1d530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 687424734007355947, guid: c69f038b6ee59124da8824d002e80d3f, type: 3}
+  enemyPrefab:
+  - {fileID: 1944492633791431035, guid: e95fe5514c024ee4ba5217936e76f880, type: 3}
+  - {fileID: 1346749869233828688, guid: 3fb461f29ad9c2e4d81d396e80f10b67, type: 3}
   spawnPoint: {x: 0, y: 0, z: 0}
   startButton: {fileID: 0}
   roundCounter: {fileID: 1084424662}
+  bombRatio: 0.5
+  numberOfEnemiesInFirstWave: 10
+  enemyDefaultInstantiatedRate: 0.2
+  firstWaveInsDelayTime: 0.6
+  increaseInsDelayTimeRate: 0.05
   delayInstantiateTime: 0.5
   waveIndex: 0
   mapManager: {fileID: 0}
+  numberOfEnemiesThisWave: 0
+  normalEnemyCountThisWave: 0
+  enemyWithBombsCountThisWave: 0
+  a: 0
+  b: 0
 --- !u!114 &1034705564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1100,17 +1112,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " This is just a simple Tower Defense proof of concept\n Carema movement:
-    Hold right mouse button to move camra, scroll wheel to zoom.\n To start:\n\tChoose
+  m_text: " This is just a simple Tower Defense proof of concept\n Camera movement:
+    Hold right mouse button to move camera, scroll wheel to zoom.\n To start:\n\tChoose
     a kind of tower from below\n\tPlace it onto a spot on a map\n\tStart the round
     once you're satisfied with the placement\n * Note: there is no destroying towers
     at this point in time, so be careful where you place them!\n Use the R key to
     restart, useful for when bugs appear. Some bugs found: map generation doesn't
-    work when the path gets T-boned, sometimes enemies don't spawn.\n\n The goal
-    for this prototype is proving that the tower defense mechanics work well enough.\n
-    Current limit for this prototype is round 8, but you can go higher. Just note
-    that bugs are more likely ho occur the longer you play.\n\n That's it! Now be
-    our precious lab rats!!!!!!!"
+    work when the path gets T-boned, sometimes enemies get stuck when spawning in.\n\n
+    The goal for this prototype is to prove that the tower defense mechanics work
+    well enough.\n Current limit for this prototype is round 8, but you can go higher.
+    Just note that bugs are more likely to occur the longer you play.\n\n That's
+    it! Now be our precious lab rats!!!!!!!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

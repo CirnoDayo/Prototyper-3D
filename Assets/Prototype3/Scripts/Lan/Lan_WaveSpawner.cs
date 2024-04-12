@@ -7,27 +7,23 @@ using UnityEngine.UI;
 
 public class Lan_WaveSpawner : MonoBehaviour
 {
+    #region Variables
     [Header("Unity Set up")]
-    public Transform enemyPrefab;
+    public Transform[] enemyPrefab;
     public Vector3 spawnPoint;
     public Button startButton;
-    public Transform enemyWithBomb;
-
-    [SerializeField] private int numberOfEnemiesInFirstWave = 10;
     public TMPro.TextMeshProUGUI roundCounter;
-
-    [Header("Attributes")] 
-    [SerializeField] float delayInstantiateTime = 0f;
-    //public float timeBetweenWaves = 5f;
-    //public float countdown = 2f;
-    [SerializeField] int waveIndex = 0;
-    [SerializeField] private float enemyDefaultInstantiatedRate = .1f;
-    [SerializeField] private float firstWaveInsDelayTime = 0.2f;
-    [SerializeField] private float increaseInsDelayTimeRate = 0.02f;
-   
-
+    [Header("Attributes")]
+    [Range(0f, 1f)] public float bombRatio;
+    public int numberOfEnemiesInFirstWave = 10;
+    public float enemyDefaultInstantiatedRate;
+    public float firstWaveInsDelayTime;
+    public float increaseInsDelayTimeRate;
+    public float delayInstantiateTime;
+    public int waveIndex = 0;
     [Header("Private")]
     [SerializeField] Akino_MapManager mapManager;
+    #endregion
 
     private void Start()
     {
@@ -44,9 +40,8 @@ public class Lan_WaveSpawner : MonoBehaviour
 
     private void OnDisable()
     {
-        Lan_EventManager.UpdateSpawnedPoint -= TheNewSpawnPoint;    
+        Lan_EventManager.UpdateSpawnedPoint -= TheNewSpawnPoint;
     }
-    
 
     #endregion
 
@@ -66,46 +61,51 @@ public class Lan_WaveSpawner : MonoBehaviour
     }
     
     private float numberOfEnemiesLastWave = 0;
-    private float numberOfEnemiesThisWave;
+    public float numberOfEnemiesThisWave;
+    public float normalEnemyCountThisWave;
+    public float enemyWithBombsCountThisWave;
+    public int a; public int b;
 
     IEnumerator SpawnWave()
     {
-        //Debug.Log("SpawnWave method is calling!");
         numberOfEnemiesThisWave = numberOfEnemiesInFirstWave;
         waveIndex++;
         int totalEnemyInstantiated = 0;
-        //Debug.Log("waveIndex: " + waveIndex);
+        int enemyWithBombsCount = 0;
+        int normalEnemyCount = 0;
 
         for (int i = 1; i < waveIndex; i++)
         {
             numberOfEnemiesThisWave = numberOfEnemiesLastWave + (numberOfEnemiesLastWave * enemyDefaultInstantiatedRate);
-            Debug.Log("For loop for add more enemy is working!");
         }
-        
-        //Debug.Log("Original numberOfEnemies: " + numberOfEnemiesThisWave);
-        //Debug.Log("Round to Int= " + Mathf.RoundToInt(numberOfEnemiesThisWave));
         totalEnemyInstantiated = (int)Mathf.RoundToInt(numberOfEnemiesThisWave);
-        
+        a = enemyWithBombsCount = (int)Mathf.RoundToInt(totalEnemyInstantiated * bombRatio);
+        b = normalEnemyCount = totalEnemyInstantiated - enemyWithBombsCount;
+
         delayInstantiateTime = firstWaveInsDelayTime - increaseInsDelayTimeRate * (waveIndex - 1);
-        Debug.Log("delayInstantiateTime: " + delayInstantiateTime);
-        
-        for (int i = 0; i < totalEnemyInstantiated; i++)
+
+        yield return new WaitForSeconds(1f);
+        for (int i = 0; i < totalEnemyInstantiated;)
         {
+            Debug.Log("!");
             yield return new WaitForSeconds(delayInstantiateTime);
-            
-            SpawnEnemy();
-            
+            if(normalEnemyCountThisWave <= normalEnemyCount)
+            {
+                SpawnEnemy(0);
+                normalEnemyCountThisWave++;
+                i++;
+            }
+            if (enemyWithBombsCountThisWave <= enemyWithBombsCount)
+            {
+                SpawnEnemy(1);
+                enemyWithBombsCount++;
+                i++;
+            }
         }
-
         numberOfEnemiesLastWave = numberOfEnemiesThisWave;
-        //Debug.Log(numberOfEnemiesLastWave*enemyDefaultInstantiatedRate);
-
-
-
     }
-    void SpawnEnemy()
+    void SpawnEnemy(int enemyIndex)
     {
-        //Debug.Log("SpawnEnemy is calling!");
-        Instantiate(enemyPrefab, spawnPoint, Quaternion.identity);
+        Instantiate(enemyPrefab[enemyIndex], spawnPoint, Quaternion.identity);
     }
 }

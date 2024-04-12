@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 33ad2e6d5535cc94093a26634cf41365, type: 3}
       propertyPath: m_TagString
-      value: EnemyWithBomb
+      value: NormalEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 6317578925029434746, guid: 33ad2e6d5535cc94093a26634cf41365, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -128,7 +128,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 20
+  m_Speed: 12
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 180
@@ -154,6 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endPoint: {x: 0, y: 0, z: 0}
   livesUI: {fileID: 0}
-  agent: {fileID: 0}
-  enemyHealthPoint: 100
+  agent: {fileID: 8327302153532307640}
+  enemyHealthPoint: 60
   detectionRange: 5

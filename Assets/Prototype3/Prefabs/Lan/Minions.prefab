@@ -125,7 +125,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 20
+  m_Speed: 12
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 180
@@ -151,6 +151,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endPoint: {x: 0, y: 0, z: 0}
   livesUI: {fileID: 0}
-  agent: {fileID: 0}
-  enemyHealthPoint: 100
+  agent: {fileID: 7167543354786963221}
+  enemyHealthPoint: 60
   detectionRange: 5

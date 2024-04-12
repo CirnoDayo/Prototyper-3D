@@ -48,10 +48,16 @@ public class CannonManager : MonoBehaviour
     {
         Lan_EventManager.UpdateSpawnedPoint -= AddingTower;    
     }
-    
+
 
     #endregion
-    
+
+    private void Start()
+    {
+        sniperText.text = sniperLimit.ToString();
+        heavyCannonText.text = heavyCannonLimit.ToString();
+    }
+
     void Update()
     {
         Ray ray = gameCamera.ScreenPointToRay(Input.mousePosition);
