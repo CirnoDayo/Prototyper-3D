@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a2256612-c251-4d8b-abf6-64df31131acb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prototyper-3D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prototyper-3D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Sniper.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Sniper.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Spawner/LanTesting_Monster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Spawner/LanTesting_Monster.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scenes/MainScene_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scenes/MainScene_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Akino/Akino_MapManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Akino/Akino_MapManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_EnemyScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_EnemyScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_WaveSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_WaveSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Main/CannonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Main/CannonManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,9 +49,9 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\Admin\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Admin\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\Admin\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\s3979326\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\s3979326\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\s3979326\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -119,6 +114,7 @@
       <workItem from="1712662911499" duration="4125000" />
       <workItem from="1712731094539" duration="2320000" />
       <workItem from="1712817874995" duration="10526000" />
+      <workItem from="1712895386364" duration="864000" />
     </task>
     <servers />
   </component>

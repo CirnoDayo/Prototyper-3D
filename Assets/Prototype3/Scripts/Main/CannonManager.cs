@@ -35,6 +35,22 @@ public class CannonManager : MonoBehaviour
     Vector3 griddedPosition;
     private RaycastHit hitInfo;
 
+
+    #region SubscribeToCustomEvent
+
+    private void OnEnable()
+    {
+        Lan_EventManager.UpdateSpawnedPoint += AddingTower;
+    }
+
+    private void OnDisable()
+    {
+        Lan_EventManager.UpdateSpawnedPoint -= AddingTower;    
+    }
+    
+
+    #endregion
+    
     void Update()
     {
         Ray ray = gameCamera.ScreenPointToRay(Input.mousePosition);
@@ -98,6 +114,23 @@ public class CannonManager : MonoBehaviour
                 heavyCannonButton.interactable = false;
                 StopPlacingCannon();
             }
+        }
+    }
+
+    private void AddingTower()
+    {
+        int randomIndex = Random.Range(0, 2);
+
+        // Increment the corresponding variable based on the random index
+        if (randomIndex == 0)
+        {
+            sniperLimit++;
+        }
+
+        else
+        {
+            heavyCannonLimit++;
+            
         }
     }
 
