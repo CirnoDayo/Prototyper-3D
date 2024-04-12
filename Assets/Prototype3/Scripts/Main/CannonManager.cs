@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -117,27 +118,42 @@ public class CannonManager : MonoBehaviour
         }
     }
 
-    public void UpdateUI()
+    public void UpdateUI()//Call by UI Manager script
     {
-        sniperText.text = sniperLimit.ToString();
-        heavyCannonText.text = heavyCannonLimit.ToString();
+        int sniperLeft = sniperLimit - sniperCount;
+        int heavyCannonLeft = heavyCannonLimit - heavyCannonCount;
+        
+        sniperText.text = sniperLeft.ToString();
+        heavyCannonText.text = heavyCannonLeft.ToString();
+        
+        if (sniperLeft >=1)
+        {
+            sniperButton.interactable = true;
+        }
+        else if (heavyCannonLeft >= 1)
+        {
+            heavyCannonButton.interactable = true;
+        }
+        
     }
 
-    private void AddingTower()
+    private void AddingTower()//Call by custom event
     {
         int randomIndex = Random.Range(0, 2);
-        Debug.Log(randomIndex);
-        // Increment the corresponding variable based on the random index
         if (randomIndex == 0)
         {
             sniperLimit++;
+            
         }
 
         else
         {
             heavyCannonLimit++;
+           
             
         }
+       
+        
     }
 
     private void StopPlacingCannon()
@@ -156,8 +172,7 @@ public class CannonManager : MonoBehaviour
         heavyCannonCount = 0;
         sniperText.text = $"{sniperLimit}";
         heavyCannonText.text = $"{heavyCannonLimit}";
-        sniperButton.interactable = true;
-        heavyCannonButton.interactable = true;
+        
     }
 
     public void InstantiateCannonOfType(string cannonType)

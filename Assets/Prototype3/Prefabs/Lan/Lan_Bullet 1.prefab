@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7905617844750518714}
   - component: {fileID: 6292741494447325451}
   m_Layer: 0
-  m_Name: Lan_Bullet
+  m_Name: Lan_Bullet 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

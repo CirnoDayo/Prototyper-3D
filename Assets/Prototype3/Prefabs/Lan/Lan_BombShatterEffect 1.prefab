@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7590599798023669452}
   - component: {fileID: 884408422259778210}
   m_Layer: 0
-  m_Name: Lan_BombShatterEffect
+  m_Name: Lan_BombShatterEffect 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
