@@ -7,11 +7,13 @@ using UnityEngine;
 public class Lan_UIManager : MonoBehaviour
 {
     [SerializeField] int activeEnemies = 0;
+    [SerializeField] CannonManager cannonManager;
     public Button startButton;
 
     private void Start()
     {
         startButton = GameObject.Find("RoundChangeButton").GetComponent<Button>();
+        cannonManager = GetComponent<CannonManager>();
     }
 
     #region SbscribeToCustomEvent
@@ -43,7 +45,7 @@ public class Lan_UIManager : MonoBehaviour
         if(activeEnemies <= 0)
         {
             startButton.interactable = true;
-            
+            cannonManager.UpdateUI();
         }
     }
         

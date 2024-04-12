@@ -117,10 +117,16 @@ public class CannonManager : MonoBehaviour
         }
     }
 
+    public void UpdateUI()
+    {
+        sniperText.text = sniperLimit.ToString();
+        heavyCannonText.text = heavyCannonLimit.ToString();
+    }
+
     private void AddingTower()
     {
         int randomIndex = Random.Range(0, 2);
-
+        Debug.Log(randomIndex);
         // Increment the corresponding variable based on the random index
         if (randomIndex == 0)
         {
