@@ -34,9 +34,6 @@ public class Lan_EnemyBomb : MonoBehaviour
         #region EffectInstantiate
         GameObject effectInstance = (GameObject)Instantiate(bombShatterEffect, transform.position, transform.rotation);
         Destroy(effectInstance,2f);
-
-        
-
         #endregion
 
         #region WorkingCode
@@ -95,10 +92,9 @@ public class Lan_EnemyBomb : MonoBehaviour
         #region EffectInstantiate
         GameObject effectInstance = (GameObject)Instantiate(bombShatterEffect, transform.position, transform.rotation);
         Destroy(effectInstance,2f);
-
         
-
         #endregion
+        
         Lan_EnemyScript enemyScript = gameObject.GetComponent<Lan_EnemyScript>();
         if (enemyScript != null)
         {
@@ -117,17 +113,6 @@ public class Lan_EnemyBomb : MonoBehaviour
         }
         foreach (Collider filteredCollider in filteredColliders) 
         {
-
-            if (filteredCollider.CompareTag("NormalEnemy"))
-            {
-                Lan_EnemyScript e = filteredCollider.GetComponent<Lan_EnemyScript>();
-                if (e != null)
-                {
-                    e.TakeDamge(damageDealt/2);
-                }
-            }
-            else if (filteredCollider.CompareTag("EnemyWithBomb"))
-            {
                 Lan_EnemyScript e = filteredCollider.GetComponent<Lan_EnemyScript>();
                 Lan_EnemyBomb enemyBomb = filteredCollider.GetComponent<Lan_EnemyBomb>();
                 if (e != null)
@@ -143,12 +128,12 @@ public class Lan_EnemyBomb : MonoBehaviour
                 {
                     return;
                 }
-            }
+            
         }
-       // Destroy(gameObject.GetComponent<Lan_EnemyBomb>());
+        Destroy(gameObject.GetComponent<Lan_EnemyBomb>());
     }
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, bombExplosionRange);

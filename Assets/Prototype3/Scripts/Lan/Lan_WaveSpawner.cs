@@ -95,7 +95,7 @@ public class Lan_WaveSpawner : MonoBehaviour
                 normalEnemyCountThisWave++;
                 i++;
             }
-            if (enemyWithBombsCountThisWave <= enemyWithBombsCount)
+            else if (enemyWithBombsCountThisWave <= enemyWithBombsCount)
             {
                 SpawnEnemy(1);
                 enemyWithBombsCount++;

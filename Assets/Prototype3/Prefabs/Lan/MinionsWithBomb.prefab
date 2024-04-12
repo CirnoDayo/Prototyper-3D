@@ -89,6 +89,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 33ad2e6d5535cc94093a26634cf41365, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1385772193396776005}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 33ad2e6d5535cc94093a26634cf41365, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5475760694083118827}
   m_SourcePrefab: {fileID: 100100000, guid: 33ad2e6d5535cc94093a26634cf41365, type: 3}
 --- !u!1 &1872175224243104234 stripped
 GameObject:
@@ -157,3 +160,20 @@ MonoBehaviour:
   agent: {fileID: 8327302153532307640}
   enemyHealthPoint: 60
   detectionRange: 5
+--- !u!114 &-5475760694083118827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872175224243104234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d5fa747def65f489f7cccca665d2bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombExplosionRange: 10
+  bombShatterEffect: {fileID: 699121975160425259, guid: d0a6921ae3dcea04ca5003fce65724aa, type: 3}
+  damageDealt: 20
+  buffedDamage: 0
+  hasExploded: 0

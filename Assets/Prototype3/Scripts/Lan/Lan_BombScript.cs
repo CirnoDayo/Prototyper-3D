@@ -64,18 +64,6 @@ public class Lan_BombScript : MonoBehaviour
         foreach (Collider collider in colldiers)
         {
             
-            if (collider.CompareTag("NormalEnemy")) 
-            {
-                
-                Lan_EnemyScript e = collider.GetComponent<Lan_EnemyScript>();
-                if (e != null)
-                {
-                    e.TakeDamge(damageDealt);
-                }
-                Debug.Log(e.ToString());
-            }
-            else if (collider.CompareTag("EnemyWithBomb"))
-            {
                 Lan_EnemyScript e = collider.GetComponent<Lan_EnemyScript>();
                 if (e != null)
                 {
@@ -86,44 +74,33 @@ public class Lan_BombScript : MonoBehaviour
                 {
                     enemyBomb.InteractWithAnotherBomb();
                 }
-            }
+                else
+                {
+                    return;
+                }
+            
         }
     }
 
     void DamageEnemy(Transform enemy)
     {
       
-        if (enemy.CompareTag("NormalEnemy"))
+        Lan_EnemyScript e = enemy.GetComponent<Lan_EnemyScript>();
+        if (e != null)
         {
-
-            Lan_EnemyScript e = enemy.GetComponent<Lan_EnemyScript>();
-            if (e != null)
-            {
-                e.TakeDamge(damageDealt);
-            }
-           
+            e.TakeDamge(damageDealt);
         }
-        else if (enemy.CompareTag("EnemyWithBomb"))
+        Lan_EnemyBomb enemyBomb = enemy.GetComponent<Lan_EnemyBomb>();
+        if (enemyBomb != null)
         {
-            Lan_EnemyScript e = enemy.GetComponent<Lan_EnemyScript>();
-            if (e != null)
-            {
-                e.TakeDamge(damageDealt);
-            }
-            Lan_EnemyBomb enemyBomb = enemy.GetComponent<Lan_EnemyBomb>();
-            if (enemyBomb != null)
-            {
-                enemyBomb.InteractWithAnotherBomb();
-            }
+            enemyBomb.InteractWithAnotherBomb();
         }
-
-        //Destroy(enemy.gameObject);
+        else
+        {
+            return;
+        }
     }
-
-    void Destroy()
-    {
-        
-    }
+    
 
     private void OnDrawGizmosSelected()
     {

@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a2256612-c251-4d8b-abf6-64df31131acb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prototyper-3D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prototyper-3D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Spawner/LanTesting_Monster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Spawner/LanTesting_Monster.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Bullet 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Bullet 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/MinionsWithBomb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/MinionsWithBomb.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scenes/MainScene_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scenes/MainScene_1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_BombScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_BombScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_EnemyBomb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_EnemyBomb.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_WaveSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_WaveSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Main/CannonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Main/CannonManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +121,7 @@
       <workItem from="1712817874995" duration="10526000" />
       <workItem from="1712895386364" duration="1197000" />
       <workItem from="1712905727996" duration="7597000" />
+      <workItem from="1712929102080" duration="1079000" />
     </task>
     <servers />
   </component>
