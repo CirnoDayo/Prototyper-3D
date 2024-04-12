@@ -98,7 +98,7 @@ MonoBehaviour:
   shootingDelayTime: 0.5
   enemyTag: NormalEnemy
   partToRotate: {fileID: 5440630301389881359}
-  bombPrefab: {fileID: 4474856517676475251, guid: e0ce54d0b79947f4bb9df4e8bd1baa22, type: 3}
+  bombPrefab: {fileID: 4474856517676475251, guid: 6f2d9bf027a20db4284cef789a1ea9cc, type: 3}
   firePoint: {fileID: 1870995551295835169}
 --- !u!54 &6817090362361560705
 Rigidbody:

@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelSpeed: 70
   bombExplosionRange: 0
-  bombShatterEffect: {fileID: 382575297820738718, guid: a6157dd849d4d3f488caa7c1439ae720, type: 3}
+  bombShatterEffect: {fileID: 382575297820738718, guid: e3d077805429cc94b94a03eab003a316, type: 3}
   damageDealt: 0
 --- !u!96 &6292741494447325451
 TrailRenderer:

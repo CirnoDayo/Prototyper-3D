@@ -6,48 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a2256612-c251-4d8b-abf6-64df31131acb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prototyper-3D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prototyper-3D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Lan_Asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Lan_Asset/Lan_SparkEffect.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Lan_Asset/Lan_SparkEffect.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Lan_EXXPLOSIOONNNNNN FX Profile.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Lan_EXXPLOSIOONNNNNN FX Profile.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Materials/Lan.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Materials/Lan/Lan_BulletMaterial.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Materials/Lan/Lan_BulletMaterial.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Materials/Lan/Lan_Emissive.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Materials/Lan/Lan_Emissive.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Materials/Lan/Lan_Particle Material.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Materials/Lan/Lan_Particle Material.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Materials/Lan/Lan_Smoke.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Materials/Lan/Lan_Smoke.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Materials/Lan/Lan_Spark.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Materials/Lan/Lan_Spark.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Prefabs/Lan.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Prefabs/Lan/Lan_BombShatterEffect.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Prefabs/Lan/Lan_BombShatterEffect.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Prefabs/Lan/Lan_Bullet.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Prefabs/Lan/Lan_Bullet.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Prefabs/Lan/Lan_EXXPLOSIOONNNNNN FX.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Prefabs/Lan/Lan_EXXPLOSIOONNNNNN FX.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Prefabs/Lan/Lan_ExplosionLight.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Prefabs/Lan/Lan_ExplosionLight.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Prefabs/Lan/Lan_GlobalVolume.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Prefabs/Lan/Lan_GlobalVolume.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Scenes/Lan_MainScene_3.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Scenes/Lan_MainScene_3.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Scenes/Lan_MainScene_3_Profiles.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Scenes/Lan_MainScene_3_Profiles/GlobalVolume Profile 1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Scenes/Lan_MainScene_3_Profiles/GlobalVolume Profile 1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Scenes/Lan_MainScene_3_Profiles/GlobalVolume Profile.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Scenes/Lan_MainScene_3_Profiles/GlobalVolume Profile.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Scenes/Lan_MainScene_3_Profiles/Spark Profile.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Lan_Asset/Lan_Dev Assets/Scenes/Lan_MainScene_3_Profiles/Spark Profile.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scenes/MainScene_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scenes/MainScene_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Main/CannonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Main/CannonManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Bomb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Bomb.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Bullet 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Bullet 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Sniper.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Sniper.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_WaveSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_WaveSpawner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +118,7 @@
       <workItem from="1712731094539" duration="2320000" />
       <workItem from="1712817874995" duration="10526000" />
       <workItem from="1712895386364" duration="1197000" />
-      <workItem from="1712905727996" duration="1356000" />
+      <workItem from="1712905727996" duration="5258000" />
     </task>
     <servers />
   </component>
