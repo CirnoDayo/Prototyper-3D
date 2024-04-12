@@ -51,7 +51,7 @@ public class Lan_BombScript : MonoBehaviour
         }
         else
         {
-            DamageBuff(target);
+            DamageEnemy(target);
             
         }
         
@@ -72,6 +72,7 @@ public class Lan_BombScript : MonoBehaviour
                 {
                     e.TakeDamge(damageDealt);
                 }
+                Debug.Log(e.ToString());
             }
             else if (collider.CompareTag("EnemyWithBomb"))
             {
@@ -89,19 +90,33 @@ public class Lan_BombScript : MonoBehaviour
         }
     }
 
-    void DamageBuff(Transform enemy)
+    void DamageEnemy(Transform enemy)
     {
-        Lan_EnemyScript e = enemy.GetComponent<Lan_EnemyScript>();
-
-        if (e != null)
+      
+        if (enemy.CompareTag("NormalEnemy"))
         {
-            Lan_EnemyBomb enemyBomb = target.GetComponent<Lan_EnemyBomb>();
+
+            Lan_EnemyScript e = enemy.GetComponent<Lan_EnemyScript>();
+            if (e != null)
+            {
+                e.TakeDamge(damageDealt);
+            }
+           
+        }
+        else if (enemy.CompareTag("EnemyWithBomb"))
+        {
+            Lan_EnemyScript e = enemy.GetComponent<Lan_EnemyScript>();
+            if (e != null)
+            {
+                e.TakeDamge(damageDealt);
+            }
+            Lan_EnemyBomb enemyBomb = enemy.GetComponent<Lan_EnemyBomb>();
             if (enemyBomb != null)
             {
-              enemyBomb.DamageBuff();
+                enemyBomb.InteractWithAnotherBomb();
             }
         }
-        
+
         //Destroy(enemy.gameObject);
     }
 

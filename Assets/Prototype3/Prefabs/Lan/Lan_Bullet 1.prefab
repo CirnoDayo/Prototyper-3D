@@ -100,7 +100,7 @@ MonoBehaviour:
   travelSpeed: 70
   bombExplosionRange: 0
   bombShatterEffect: {fileID: 382575297820738718, guid: a6157dd849d4d3f488caa7c1439ae720, type: 3}
-  damageDealt: 0
+  damageDealt: 20
 --- !u!96 &6292741494447325451
 TrailRenderer:
   serializedVersion: 3

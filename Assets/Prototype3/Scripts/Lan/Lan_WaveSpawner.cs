@@ -11,6 +11,7 @@ public class Lan_WaveSpawner : MonoBehaviour
     public Transform enemyPrefab;
     public Vector3 spawnPoint;
     public Button startButton;
+    public TMPro.TextMeshProUGUI roundCounter;
 
     [Header("Attributes")] 
     [SerializeField] float delayInstantiateTime = 0f;
@@ -45,7 +46,7 @@ public class Lan_WaveSpawner : MonoBehaviour
 
     private void Update()
     {
-        
+        roundCounter.text = waveIndex.ToString();
     }
     private void TheNewSpawnPoint()
     {
