@@ -21,7 +21,9 @@ public class Lan_WaveSpawner : MonoBehaviour
     //public float timeBetweenWaves = 5f;
     //public float countdown = 2f;
     [SerializeField] int waveIndex = 0;
-    [SerializeField] private float enemyDefaultInstantiatedRate = .2f;
+    [SerializeField] private float enemyDefaultInstantiatedRate = .1f;
+    [SerializeField] private float firstWaveInsDelayTime = 0.2f;
+    [SerializeField] private float increaseInsDelayTimeRate = 0.02f;
    
 
     [Header("Private")]
@@ -68,11 +70,11 @@ public class Lan_WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-        Debug.Log("SpawnWave method is calling!");
+        //Debug.Log("SpawnWave method is calling!");
         numberOfEnemiesThisWave = numberOfEnemiesInFirstWave;
         waveIndex++;
         int totalEnemyInstantiated = 0;
-        Debug.Log("waveIndex: " + waveIndex);
+        //Debug.Log("waveIndex: " + waveIndex);
 
         for (int i = 1; i < waveIndex; i++)
         {
@@ -80,9 +82,12 @@ public class Lan_WaveSpawner : MonoBehaviour
             Debug.Log("For loop for add more enemy is working!");
         }
         
-        Debug.Log("Original numberOfEnemies: " + numberOfEnemiesThisWave);
-        Debug.Log("Round to Int= " + Mathf.RoundToInt(numberOfEnemiesThisWave));
+        //Debug.Log("Original numberOfEnemies: " + numberOfEnemiesThisWave);
+        //Debug.Log("Round to Int= " + Mathf.RoundToInt(numberOfEnemiesThisWave));
         totalEnemyInstantiated = (int)Mathf.RoundToInt(numberOfEnemiesThisWave);
+        
+        delayInstantiateTime = firstWaveInsDelayTime - increaseInsDelayTimeRate * (waveIndex - 1);
+        Debug.Log("delayInstantiateTime: " + delayInstantiateTime);
         
         for (int i = 0; i < totalEnemyInstantiated; i++)
         {
@@ -93,7 +98,7 @@ public class Lan_WaveSpawner : MonoBehaviour
         }
 
         numberOfEnemiesLastWave = numberOfEnemiesThisWave;
-        Debug.Log(numberOfEnemiesLastWave*enemyDefaultInstantiatedRate);
+        //Debug.Log(numberOfEnemiesLastWave*enemyDefaultInstantiatedRate);
 
 
 

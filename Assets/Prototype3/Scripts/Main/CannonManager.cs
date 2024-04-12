@@ -7,12 +7,12 @@ public class CannonManager : MonoBehaviour
 {
     [Header("Cannon Stats")]
     [Header("Heavy Cannon")]
-    public int heavyCannonLimit = 2;
+    public int heavyCannonLimit;
     private int heavyCannonCount = 0;
     public GameObject heavyCannonPrefab;
     public GameObject fakeHeavyCannonPrefab;
     [Header("Sniper")]
-    public int sniperLimit = 2;
+    public int sniperLimit;
     private int sniperCount = 0;
     public GameObject sniperPrefab;
     public GameObject fakeSniperPrefab;

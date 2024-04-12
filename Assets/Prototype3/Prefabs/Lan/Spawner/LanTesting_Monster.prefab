@@ -146,5 +146,5 @@ MonoBehaviour:
   endPoint: {x: 0, y: 0, z: 0}
   livesUI: {fileID: 0}
   agent: {fileID: 8008518059422262135}
-  enemyHealthPoint: 100
+  enemyHealthPoint: 60
   detectionRange: 5
