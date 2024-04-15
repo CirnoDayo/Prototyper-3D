@@ -87,11 +87,11 @@ public class Lan_WaveSpawner : MonoBehaviour
         }
         
         totalEnemyInstantiated = (int)Mathf.RoundToInt(numberOfEnemiesThisWave);
-        Debug.Log("Total enemy: " + totalEnemyInstantiated);
+        //Debug.Log("Total enemy: " + totalEnemyInstantiated);
         enemyWithBombsCount = (int)Mathf.RoundToInt(totalEnemyInstantiated * bombRatio);
-        Debug.Log("EnemyWithBombCount: " + enemyWithBombsCount);
+        //Debug.Log("EnemyWithBombCount: " + enemyWithBombsCount);
         normalEnemyCount = totalEnemyInstantiated - enemyWithBombsCount;
-        Debug.Log("Normal enemy count: " + normalEnemyCount);
+        //Debug.Log("Normal enemy count: " + normalEnemyCount);
 
         delayInstantiateTime = firstWaveInsDelayTime - increaseInsDelayTimeRate * (waveIndex - 1);
 
@@ -100,7 +100,7 @@ public class Lan_WaveSpawner : MonoBehaviour
         {
 
             int randomNumber = Random.Range(0, 2); // Random integer between 0 (inclusive) and 2 (exclusive)
-            Debug.Log("randomNumber: " + randomNumber);
+            //Debug.Log("randomNumber: " + randomNumber);
             bool conditionChecked = false;
             
             while (!conditionChecked)
@@ -140,6 +140,7 @@ public class Lan_WaveSpawner : MonoBehaviour
     }
     void SpawnEnemy(int enemyIndex)
     {
-        Instantiate(enemyPrefab[enemyIndex], spawnPoint, Quaternion.identity);
+        Quaternion rotation = Quaternion.Euler(0, 180, 0);
+        Instantiate(enemyPrefab[enemyIndex], spawnPoint, rotation);
     }
 }

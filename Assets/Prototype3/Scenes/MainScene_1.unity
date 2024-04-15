@@ -793,17 +793,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab:
-  - {fileID: 1944492633791431035, guid: e95fe5514c024ee4ba5217936e76f880, type: 3}
-  - {fileID: 1346749869233828688, guid: 3fb461f29ad9c2e4d81d396e80f10b67, type: 3}
+  - {fileID: 2796502896869616733, guid: e95fe5514c024ee4ba5217936e76f880, type: 3}
+  - {fileID: 4410428065601282343, guid: 3fb461f29ad9c2e4d81d396e80f10b67, type: 3}
   spawnPoint: {x: 0, y: 0, z: 0}
   startButton: {fileID: 0}
   roundCounter: {fileID: 1084424662}
   bombRatio: 0.2
   numberOfEnemiesInFirstWave: 10
   enemyDefaultInstantiatedRate: 0.2
-  firstWaveInsDelayTime: 0.6
+  firstWaveInsDelayTime: 1
   increaseInsDelayTimeRate: 0.05
-  delayInstantiateTime: 0.5
+  delayInstantiateTime: 0
   waveIndex: 0
   mapManager: {fileID: 0}
   numberOfEnemiesThisWave: 0

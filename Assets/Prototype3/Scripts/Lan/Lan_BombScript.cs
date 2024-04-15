@@ -48,13 +48,14 @@ public class Lan_BombScript : MonoBehaviour
         {
             Explode();
             
+            
         }
         else
         {
             DamageEnemy(target);
             
+            
         }
-        
         Destroy(gameObject);
     }
 
@@ -62,13 +63,16 @@ public class Lan_BombScript : MonoBehaviour
     {
         Collider[] colldiers = Physics.OverlapSphere(transform.position, bombExplosionRange);
         foreach (Collider collider in colldiers)
-        {
-            
+        { 
+            if (collider.CompareTag("NormalEnemy"))
+            {
                 Lan_EnemyScript e = collider.GetComponent<Lan_EnemyScript>();
                 if (e != null)
                 {
                     e.TakeDamge(damageDealt);
+                   
                 }
+                
                 Lan_EnemyBomb enemyBomb = collider.GetComponent<Lan_EnemyBomb>();
                 if (enemyBomb != null)
                 {
@@ -78,6 +82,7 @@ public class Lan_BombScript : MonoBehaviour
                 {
                     return;
                 }
+            }
             
         }
     }

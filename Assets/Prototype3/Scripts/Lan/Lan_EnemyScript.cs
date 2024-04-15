@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 
 
@@ -11,12 +12,16 @@ public class Lan_EnemyScript : MonoBehaviour
     [Header("Unity Set up")]
     [SerializeField] Vector3 endPoint; 
     public Lan_LivesUI livesUI;
+    public Image healthBar;
+    
     
     
     [Header("Attributes")]
     [SerializeField] NavMeshAgent agent;
-    [SerializeField] private int enemyHealthPoint = 100;
+    [SerializeField] private int startHealth = 100;
+    [SerializeField] private int enemyHealthPoint;
     [SerializeField] private float detectionRange = 5f;
+    
 
     private void Start()
     {
@@ -26,15 +31,19 @@ public class Lan_EnemyScript : MonoBehaviour
             Debug.Log("Can not find Lan_LivesUI");
         }
         endPoint = new Vector3(0,0,0);
-       
+
+        enemyHealthPoint = startHealth;
+        healthBar.fillAmount = enemyHealthPoint;
         Lan_EventManager.EnemySpawned();
         
     }
 
     public void TakeDamge(int amount)
     {
-        enemyHealthPoint = enemyHealthPoint - amount;
-        Debug.Log("Enemy health left: " + enemyHealthPoint);
+        float defaultHealth = (float)startHealth;
+        
+        enemyHealthPoint -= amount;
+        healthBar.fillAmount = enemyHealthPoint / defaultHealth;
         if (enemyHealthPoint <= 0)
         {
             Die();
