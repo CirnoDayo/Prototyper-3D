@@ -793,12 +793,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab:
-  - {fileID: 1346749869233828688, guid: 3fb461f29ad9c2e4d81d396e80f10b67, type: 3}
   - {fileID: 1944492633791431035, guid: e95fe5514c024ee4ba5217936e76f880, type: 3}
+  - {fileID: 1346749869233828688, guid: 3fb461f29ad9c2e4d81d396e80f10b67, type: 3}
   spawnPoint: {x: 0, y: 0, z: 0}
   startButton: {fileID: 0}
   roundCounter: {fileID: 1084424662}
-  bombRatio: 0
+  bombRatio: 0.2
   numberOfEnemiesInFirstWave: 10
   enemyDefaultInstantiatedRate: 0.2
   firstWaveInsDelayTime: 0.6
@@ -809,8 +809,6 @@ MonoBehaviour:
   numberOfEnemiesThisWave: 0
   normalEnemyCountThisWave: 0
   enemyWithBombsCountThisWave: 0
-  a: 0
-  b: 0
 --- !u!114 &1034705564
 MonoBehaviour:
   m_ObjectHideFlags: 0

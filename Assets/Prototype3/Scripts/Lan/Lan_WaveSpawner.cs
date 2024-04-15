@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Lan_WaveSpawner : MonoBehaviour
 {
@@ -64,7 +65,11 @@ public class Lan_WaveSpawner : MonoBehaviour
     public float numberOfEnemiesThisWave;
     public float normalEnemyCountThisWave;
     public float enemyWithBombsCountThisWave;
-    public int a; public int b;
+    private int enemyWithBombExist = 0;
+    private int normalEnemyExist = 0;
+
+
+    
 
     IEnumerator SpawnWave()
     {
@@ -73,34 +78,63 @@ public class Lan_WaveSpawner : MonoBehaviour
         int totalEnemyInstantiated = 0;
         int enemyWithBombsCount = 0;
         int normalEnemyCount = 0;
+        normalEnemyExist = 0;
+        enemyWithBombExist = 0;
 
         for (int i = 1; i < waveIndex; i++)
         {
             numberOfEnemiesThisWave = numberOfEnemiesLastWave + (numberOfEnemiesLastWave * enemyDefaultInstantiatedRate);
         }
+        
         totalEnemyInstantiated = (int)Mathf.RoundToInt(numberOfEnemiesThisWave);
-        a = enemyWithBombsCount = (int)Mathf.RoundToInt(totalEnemyInstantiated * bombRatio);
-        b = normalEnemyCount = totalEnemyInstantiated - enemyWithBombsCount;
+        Debug.Log("Total enemy: " + totalEnemyInstantiated);
+        enemyWithBombsCount = (int)Mathf.RoundToInt(totalEnemyInstantiated * bombRatio);
+        Debug.Log("EnemyWithBombCount: " + enemyWithBombsCount);
+        normalEnemyCount = totalEnemyInstantiated - enemyWithBombsCount;
+        Debug.Log("Normal enemy count: " + normalEnemyCount);
 
         delayInstantiateTime = firstWaveInsDelayTime - increaseInsDelayTimeRate * (waveIndex - 1);
 
         yield return new WaitForSeconds(1f);
         for (int i = 0; i < totalEnemyInstantiated;)
         {
-            Debug.Log("!");
+
+            int randomNumber = Random.Range(0, 2); // Random integer between 0 (inclusive) and 2 (exclusive)
+            Debug.Log("randomNumber: " + randomNumber);
+            bool conditionChecked = false;
+            
+            while (!conditionChecked)
+            {
+                if (randomNumber == 0)
+                {
+                    if (normalEnemyExist >= normalEnemyCount)
+                    {
+                        randomNumber = 1;  
+                    }
+                    else
+                    {
+                        SpawnEnemy(0);
+                        normalEnemyExist++;
+                        conditionChecked = true; 
+                    }
+                }
+                else if (randomNumber == 1)
+                {
+                    
+                    if (enemyWithBombExist >= enemyWithBombsCount)
+                    {
+                        randomNumber = 0;  
+                    }
+                    else
+                    {
+                        SpawnEnemy(1);
+                        enemyWithBombExist++;
+                        conditionChecked = true; 
+                    }
+                }
+            }
+            i++;
             yield return new WaitForSeconds(delayInstantiateTime);
-            if(normalEnemyCountThisWave <= normalEnemyCount)
-            {
-                SpawnEnemy(0);
-                normalEnemyCountThisWave++;
-                i++;
-            }
-            else if (enemyWithBombsCountThisWave <= enemyWithBombsCount)
-            {
-                SpawnEnemy(1);
-                enemyWithBombsCount++;
-                i++;
-            }
         }
         numberOfEnemiesLastWave = numberOfEnemiesThisWave;
     }
