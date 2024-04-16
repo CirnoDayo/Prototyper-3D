@@ -15,11 +15,13 @@ public class Akino_MapManager : MonoBehaviour
     public GameObject instancedTile;
     public Button startButton;
     [Header("Variables")]
+    public bool divisible;
     public bool rerolling;
     public bool doorDeleted = true;
     public Transform doorDirection;
     public Quaternion nextTileRotation;
     [Header("Private")]
+    [SerializeField] Lan_WaveSpawner waveSpawner;
     [SerializeField] NavMeshSurface navigationMesh;
     [SerializeField] Quaternion[] rotations;
     [SerializeField] GameObject lastSpawnedTile;
@@ -36,6 +38,7 @@ public class Akino_MapManager : MonoBehaviour
 
     private void Start()
     {
+        waveSpawner = GetComponent<Lan_WaveSpawner>();
         int rotationIndex = Random.Range(0, rotations.Length);
         Quaternion homeRotation = rotations[rotationIndex];
         lastSpawnedTile = Instantiate(homeTile, Vector3.zero, homeRotation);
@@ -50,7 +53,7 @@ public class Akino_MapManager : MonoBehaviour
 
     private void Update()
     {
-        if (rerolling)
+        if (rerolling && waveSpawner.divisible())
         {
             startButton.interactable = false;
             if (!doorDeleted || doorScript.touchedGrass)

@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 20706841766bddf4f92a6d55cbeb6d98, type: 2}
     - target: {fileID: 919132149155446097, guid: b6176e7d632d06d49ae97081c04bfa4a, type: 3}
       propertyPath: m_Name
-      value: Minions
+      value: Minions 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b6176e7d632d06d49ae97081c04bfa4a, type: 3}
       propertyPath: m_TagString
@@ -151,6 +151,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endPoint: {x: 0, y: 0, z: 0}
   livesUI: {fileID: 0}
+  healthBar: {fileID: 0}
+  WaveSpawner: {fileID: 0}
   agent: {fileID: 7167543354786963221}
+  startHealth: 100
   enemyHealthPoint: 60
   detectionRange: 5

@@ -59,15 +59,15 @@ public class Lan_EnemyScript : MonoBehaviour
 
         if (WaveSpawner.waveIndex > 2)
         {
-            agent.speed = 10;
+            agent.speed = 11;
         }
         else if (WaveSpawner.waveIndex > 4)
         {
-            agent.speed = 12;
+            agent.speed = 13;
         }
         else if (WaveSpawner.waveIndex > 6)
         {
-            agent.speed = 14;
+            agent.speed = 15;
         }
     }
     

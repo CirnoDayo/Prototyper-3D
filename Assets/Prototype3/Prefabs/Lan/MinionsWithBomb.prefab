@@ -603,6 +603,7 @@ MonoBehaviour:
   endPoint: {x: 0, y: 0, z: 0}
   livesUI: {fileID: 0}
   healthBar: {fileID: 8784310306493553691}
+  WaveSpawner: {fileID: 0}
   agent: {fileID: 6707359639402253394}
   startHealth: 100
   enemyHealthPoint: 0

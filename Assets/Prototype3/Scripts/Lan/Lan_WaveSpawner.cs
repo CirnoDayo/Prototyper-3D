@@ -152,4 +152,13 @@ public class Lan_WaveSpawner : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(0, 180, 0);
         Instantiate(enemyPrefab[enemyIndex], spawnPoint, rotation);
     }
+
+    public bool divisible()
+    {
+        if (waveIndex == 1)
+        {
+            return true;
+        }
+        return waveIndex % 3 == 0;
+    }
 }
