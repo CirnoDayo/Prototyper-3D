@@ -8,9 +8,10 @@ public class Lan_BombScript : MonoBehaviour
     private Transform target;
     
     [SerializeField] private float travelSpeed = 70f;
-    [SerializeField] float bombExplosionRange = 0f;
+    [SerializeField] float bombExplosionRange = 0;
     [SerializeField] private GameObject bombShatterEffect;
     [SerializeField] private int damageDealt = 0;
+    [SerializeField] private bool hasExploded = false; 
 
     public void SeekEnemy(Transform _target)
     {
@@ -41,49 +42,67 @@ public class Lan_BombScript : MonoBehaviour
     void HitTarget() //Bullet Hit target detector
     {
         //When hit enemy, instantiate the effect so players know that they hit the enemy.
-        GameObject effectInstance = (GameObject)Instantiate(bombShatterEffect, transform.position, transform.rotation);
-        Destroy(effectInstance,2f);
+        
         
         if (bombExplosionRange > 0f)
         {
+            
+            if (hasExploded) return;
+            hasExploded = true;
+            GameObject effectInstance = (GameObject)Instantiate(bombShatterEffect, transform.position, transform.rotation);
+            Destroy(effectInstance,2f);
             Explode();
-            
-            
+
         }
         else
         {
             DamageEnemy(target);
             
-            
         }
-        Destroy(gameObject);
+        
     }
 
     void Explode()
     {
-        Collider[] colldiers = Physics.OverlapSphere(transform.position, bombExplosionRange);
-        foreach (Collider collider in colldiers)
-        { 
-            if (collider.CompareTag("NormalEnemy"))
+        ApplyDamage(target, damageDealt);
+        
+        List<Collider> filteredColliders = new List<Collider>();
+        Collider[] colliders = Physics.OverlapSphere(transform.position, bombExplosionRange);
+        foreach (Collider collider in colliders)//Filter itself
+        {
+            if (collider.transform != target.transform)
             {
-                Lan_EnemyScript e = collider.GetComponent<Lan_EnemyScript>();
-                if (e != null)
-                {
-                    e.TakeDamge(damageDealt);
-                   
-                }
-                
-                Lan_EnemyBomb enemyBomb = collider.GetComponent<Lan_EnemyBomb>();
-                if (enemyBomb != null)
-                {
-                    enemyBomb.InteractWithAnotherBomb();
-                }
-                else
-                {
-                    return;
-                }
+                filteredColliders.Add(collider);
             }
-            
+        }
+        
+        foreach (Collider filteredCollider in filteredColliders)
+        { 
+            if (filteredCollider.CompareTag("NormalEnemy"))
+            {
+                ApplyDamage(filteredCollider.transform,damageDealt/2);
+            }
+        }
+        
+        Destroy(gameObject);
+    }
+
+    void ApplyDamage(Transform enemy, int damage)
+    {
+        Lan_EnemyScript e = enemy.GetComponent<Lan_EnemyScript>();
+        if (e != null)
+        {
+            e.TakeDamge(damage);
+                   
+        }
+        Lan_EnemyBomb enemyBomb = enemy.GetComponent<Lan_EnemyBomb>();
+        if (enemyBomb != null)
+        {
+            enemyBomb.InteractWithAnotherBomb();
+        }
+        else
+        {
+            return;
         }
     }
 

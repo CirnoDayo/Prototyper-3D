@@ -49,7 +49,6 @@ public class Lan_EnemyBomb : MonoBehaviour
             if (filteredCollider.CompareTag("NormalEnemy"))//Filter the none enemy one
             {
                 Lan_EnemyScript e = filteredCollider.GetComponent<Lan_EnemyScript>();
-                Debug.Log(e);
                 Lan_EnemyBomb enemyBomb = filteredCollider.GetComponent<Lan_EnemyBomb>();
                 if (e != null)
                 {

@@ -658,7 +658,7 @@ Transform:
   m_GameObject: {fileID: 1034705554}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -798,7 +798,7 @@ MonoBehaviour:
   spawnPoint: {x: 0, y: 0, z: 0}
   startButton: {fileID: 0}
   roundCounter: {fileID: 1084424662}
-  bombRatio: 0.2
+  bombRatio: 0
   numberOfEnemiesInFirstWave: 10
   enemyDefaultInstantiatedRate: 0.2
   firstWaveInsDelayTime: 1
