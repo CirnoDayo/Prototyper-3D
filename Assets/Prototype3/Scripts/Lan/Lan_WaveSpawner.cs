@@ -81,17 +81,26 @@ public class Lan_WaveSpawner : MonoBehaviour
         normalEnemyExist = 0;
         enemyWithBombExist = 0;
 
+        if (2 < waveIndex && waveIndex < 5)
+        {
+            bombRatio = 0.3f;
+        }
+        else if (waveIndex > 4)
+        {
+            bombRatio = 0.2f;
+        }
+
         for (int i = 1; i < waveIndex; i++)
         {
             numberOfEnemiesThisWave = numberOfEnemiesLastWave + (numberOfEnemiesLastWave * enemyDefaultInstantiatedRate);
         }
         
         totalEnemyInstantiated = (int)Mathf.RoundToInt(numberOfEnemiesThisWave);
-        //Debug.Log("Total enemy: " + totalEnemyInstantiated);
+        
         enemyWithBombsCount = (int)Mathf.RoundToInt(totalEnemyInstantiated * bombRatio);
-        //Debug.Log("EnemyWithBombCount: " + enemyWithBombsCount);
+        
         normalEnemyCount = totalEnemyInstantiated - enemyWithBombsCount;
-        //Debug.Log("Normal enemy count: " + normalEnemyCount);
+        
 
         delayInstantiateTime = firstWaveInsDelayTime - increaseInsDelayTimeRate * (waveIndex - 1);
 

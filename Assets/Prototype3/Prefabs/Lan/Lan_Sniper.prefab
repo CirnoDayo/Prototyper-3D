@@ -93,7 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 1
   fireCountdown: 0
-  range: 50
+  range: 40
   headTurningSpeed: 10
   shootingDelayTime: 0.5
   enemyTag: NormalEnemy

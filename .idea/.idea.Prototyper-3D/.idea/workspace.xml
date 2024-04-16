@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2256612-c251-4d8b-abf6-64df31131acb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Bomb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Bomb.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Prototyper-3D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prototyper-3D/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_HeavyCannon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_HeavyCannon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Sniper.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Lan_Sniper.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Minions.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/Minions.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/MinionsWithBomb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Prefabs/Lan/MinionsWithBomb.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scenes/MainScene_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scenes/MainScene_1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_EnemyBomb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_EnemyBomb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_EnemyScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_EnemyScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_LivesUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_LivesUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_WaveSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Lan/Lan_WaveSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Main/CannonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype3/Scripts/Main/CannonManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +128,7 @@
       <workItem from="1712929102080" duration="1079000" />
       <workItem from="1713203533065" duration="8000" />
       <workItem from="1713203564560" duration="8994000" />
-      <workItem from="1713230619691" duration="2886000" />
+      <workItem from="1713230619691" duration="7341000" />
     </task>
     <servers />
   </component>

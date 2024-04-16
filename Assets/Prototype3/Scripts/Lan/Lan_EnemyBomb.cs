@@ -28,11 +28,7 @@ public class Lan_EnemyBomb : MonoBehaviour
     void ChainExplode()
     {
        
-        Lan_EnemyScript enemyScript = gameObject.GetComponent<Lan_EnemyScript>();
-        if (enemyScript != null)
-        {
-            enemyScript.TakeDamge(damageDealt);
-        }
+        ApplyDamage(gameObject.transform, damageDealt);
         
         List<Collider> filteredColliders = new List<Collider>();
         Collider[] colliders = Physics.OverlapSphere(transform.position, bombExplosionRange);
@@ -48,25 +44,29 @@ public class Lan_EnemyBomb : MonoBehaviour
         {
             if (filteredCollider.CompareTag("NormalEnemy"))//Filter the none enemy one
             {
-                Lan_EnemyScript e = filteredCollider.GetComponent<Lan_EnemyScript>();
-                Lan_EnemyBomb enemyBomb = filteredCollider.GetComponent<Lan_EnemyBomb>();
-                if (e != null)
-                {
-                    e.TakeDamge(damageDealt/2);
-                    
-                }
-
-                if (enemyBomb != null)
-                {
-                    enemyBomb.InteractWithAnotherBomb();
-                }
-                else
-                {
-                    return;
-                }
+                ApplyDamage(filteredCollider.transform,damageDealt/2);
             }
         }
-        Destroy(gameObject.GetComponent<Lan_EnemyBomb>());
+        //Destroy(gameObject.GetComponent<Lan_EnemyBomb>());
+    }
+    
+    void ApplyDamage(Transform enemy, int damage)
+    {
+        Lan_EnemyScript e = enemy.GetComponent<Lan_EnemyScript>();
+        if (e != null)
+        {
+            e.TakeDamge(damage);
+                   
+        }
+        Lan_EnemyBomb enemyBomb = enemy.GetComponent<Lan_EnemyBomb>();
+        if (enemyBomb != null)
+        {
+            enemyBomb.InteractWithAnotherBomb();
+        }
+        else
+        {
+            return;
+        }
     }
 
     private void OnDrawGizmos()

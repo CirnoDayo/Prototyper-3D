@@ -132,11 +132,11 @@ public class CannonManager : MonoBehaviour
         sniperText.text = sniperLeft.ToString();
         heavyCannonText.text = heavyCannonLeft.ToString();
         
-        if (sniperLeft >=1)
+        if (sniperLeft > 0)
         {
             sniperButton.interactable = true;
         }
-        else if (heavyCannonLeft >= 1)
+        else if (heavyCannonLeft > 0)
         {
             heavyCannonButton.interactable = true;
         }

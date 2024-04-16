@@ -13,6 +13,7 @@ public class Lan_EnemyScript : MonoBehaviour
     [SerializeField] Vector3 endPoint; 
     public Lan_LivesUI livesUI;
     public Image healthBar;
+    public Lan_WaveSpawner WaveSpawner;
     
     
     
@@ -35,7 +36,9 @@ public class Lan_EnemyScript : MonoBehaviour
         enemyHealthPoint = startHealth;
         healthBar.fillAmount = enemyHealthPoint;
         Lan_EventManager.EnemySpawned();
-        
+
+        WaveSpawner = FindObjectOfType<Lan_WaveSpawner>();
+
     }
 
     public void TakeDamge(int amount)
@@ -53,6 +56,19 @@ public class Lan_EnemyScript : MonoBehaviour
     {
         agent.SetDestination(endPoint);
         DetectEndPoint();
+
+        if (WaveSpawner.waveIndex > 2)
+        {
+            agent.speed = 10;
+        }
+        else if (WaveSpawner.waveIndex > 4)
+        {
+            agent.speed = 12;
+        }
+        else if (WaveSpawner.waveIndex > 6)
+        {
+            agent.speed = 14;
+        }
     }
     
     private void DetectEndPoint()

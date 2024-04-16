@@ -32,7 +32,8 @@ public class Lan_LivesUI : MonoBehaviour
 
     private void GameOver()
     {
-            Debug.Log("Game Over!");
+        livesText.text = "GAME OVER!";
+        Debug.Log("Game Over!");
         
     }
 }

@@ -405,10 +405,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b3a3f05cc3f33f4e96aff74bdf47c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.5
+  fireRate: 0.4
   fireCountdown: 0
   range: 30
-  headTurningSpeed: 10
+  headTurningSpeed: 4
+  shootingDelayTime: 1
   enemyTag: NormalEnemy
   partToRotate: {fileID: 2613331531933424306}
   bombPrefab: {fileID: 6002867585368699009, guid: b6f313f6e4694074289929f150499793, type: 3}

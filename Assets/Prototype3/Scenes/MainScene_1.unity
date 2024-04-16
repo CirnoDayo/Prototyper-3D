@@ -676,10 +676,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd7605a83af3d54c9e77407c62f5e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heavyCannonLimit: 3
+  heavyCannonLimit: 1
   heavyCannonPrefab: {fileID: 8395588814246037527, guid: 6829cf323a76e854e98f3f42ab50f250, type: 3}
   fakeHeavyCannonPrefab: {fileID: 8395588814246037527, guid: 9fce9e7e8a54bb0418e560c8a510ce76, type: 3}
-  sniperLimit: 3
+  sniperLimit: 2
   sniperPrefab: {fileID: 952435989297556745, guid: 90ddcfe89dd789842a54a0a2f94065fe, type: 3}
   fakeSniperPrefab: {fileID: 952435989297556745, guid: ce3ea9f08a5cd0544beb7a164e37cb84, type: 3}
   sniperButton: {fileID: 1924776407}
@@ -798,11 +798,11 @@ MonoBehaviour:
   spawnPoint: {x: 0, y: 0, z: 0}
   startButton: {fileID: 0}
   roundCounter: {fileID: 1084424662}
-  bombRatio: 0.3
-  numberOfEnemiesInFirstWave: 10
-  enemyDefaultInstantiatedRate: 0.2
-  firstWaveInsDelayTime: 1
-  increaseInsDelayTimeRate: 0.05
+  bombRatio: 0.4
+  numberOfEnemiesInFirstWave: 8
+  enemyDefaultInstantiatedRate: 0.5
+  firstWaveInsDelayTime: 1.3
+  increaseInsDelayTimeRate: 0.1
   delayInstantiateTime: 0
   waveIndex: 0
   mapManager: {fileID: 0}
