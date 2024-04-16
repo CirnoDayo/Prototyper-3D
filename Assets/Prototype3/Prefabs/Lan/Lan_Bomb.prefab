@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   travelSpeed: 70
-  bombExplosionRange: 20
+  bombExplosionRange: 15
   bombShatterEffect: {fileID: 699121975160425259, guid: d0a6921ae3dcea04ca5003fce65724aa, type: 3}
   damageDealt: 20
+  hasExploded: 0

@@ -798,7 +798,7 @@ MonoBehaviour:
   spawnPoint: {x: 0, y: 0, z: 0}
   startButton: {fileID: 0}
   roundCounter: {fileID: 1084424662}
-  bombRatio: 0
+  bombRatio: 0.3
   numberOfEnemiesInFirstWave: 10
   enemyDefaultInstantiatedRate: 0.2
   firstWaveInsDelayTime: 1

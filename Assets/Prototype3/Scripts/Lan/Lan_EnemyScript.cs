@@ -41,7 +41,7 @@ public class Lan_EnemyScript : MonoBehaviour
     public void TakeDamge(int amount)
     {
         float defaultHealth = (float)startHealth;
-        
+        Debug.Log("Damafe taken:" + amount);
         enemyHealthPoint -= amount;
         healthBar.fillAmount = enemyHealthPoint / defaultHealth;
         if (enemyHealthPoint <= 0)

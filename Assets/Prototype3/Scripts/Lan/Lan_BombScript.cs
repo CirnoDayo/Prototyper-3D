@@ -57,7 +57,7 @@ public class Lan_BombScript : MonoBehaviour
         else
         {
             DamageEnemy(target);
-            
+            Destroy(gameObject);
         }
         
     }
@@ -123,6 +123,7 @@ public class Lan_BombScript : MonoBehaviour
         {
             return;
         }
+        
     }
     
 
