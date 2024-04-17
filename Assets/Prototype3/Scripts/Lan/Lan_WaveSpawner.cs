@@ -104,7 +104,7 @@ public class Lan_WaveSpawner : MonoBehaviour
 
         delayInstantiateTime = firstWaveInsDelayTime - increaseInsDelayTimeRate * (waveIndex - 1);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         for (int i = 0; i < totalEnemyInstantiated;)
         {
 

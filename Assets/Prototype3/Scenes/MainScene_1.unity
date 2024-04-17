@@ -753,6 +753,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   homeTile: {fileID: 7927483621283959747, guid: 259a4cd39e4970148be6f974ed17b8a8, type: 3}
   mapTiles:
+  - {fileID: 7927483621283959747, guid: 4ccc3e0f59a7ebd41a02c3ca62913ebb, type: 3}
+  - {fileID: 7927483621283959747, guid: 71f181da85bf72e449647277266f2edb, type: 3}
+  - {fileID: 7927483621283959747, guid: a0462fa6a62e39943902bf3c06f401f9, type: 3}
+  - {fileID: 7927483621283959747, guid: 05c9cddb06a29c14c8cc6b609f4a60cb, type: 3}
+  - {fileID: 7927483621283959747, guid: abb4fa8daff953b49892a09242bb423a, type: 3}
+  - {fileID: 7927483621283959747, guid: c30410db32f6263478b673e9f6ee94eb, type: 3}
+  - {fileID: 7927483621283959747, guid: 089551ba252e7f14692da1afbc6a567f, type: 3}
   - {fileID: 7927483621283959747, guid: e407f98d41421eb41af0d5e1e2728c37, type: 3}
   - {fileID: 7927483621283959747, guid: d3e76a8c9944b404cad439c93f819b11, type: 3}
   - {fileID: 7927483621283959747, guid: 47ae82e1a6891524eb9938fe775f60f8, type: 3}
@@ -763,6 +770,8 @@ MonoBehaviour:
   rerolling: 0
   doorDeleted: 0
   doorDirection: {fileID: 0}
+  doorDirectionList:
+  - {fileID: 0}
   nextTileRotation: {x: 0, y: 0, z: 0, w: 0}
   waveSpawner: {fileID: 0}
   navigationMesh: {fileID: 1034705560}
@@ -801,7 +810,7 @@ MonoBehaviour:
   startButton: {fileID: 0}
   roundCounter: {fileID: 1084424662}
   bombRatio: 0.4
-  numberOfEnemiesInFirstWave: 8
+  numberOfEnemiesInFirstWave: 1
   enemyDefaultInstantiatedRate: 0.5
   firstWaveInsDelayTime: 1.3
   increaseInsDelayTimeRate: 0.1

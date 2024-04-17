@@ -18,7 +18,8 @@ public class Akino_MapManager : MonoBehaviour
     public bool divisible;
     public bool rerolling;
     public bool doorDeleted = true;
-    public Transform doorDirection;
+    public Transform doorDirection = null;
+    public Transform[] doorDirectionList;
     public Quaternion nextTileRotation;
     [Header("Private")]
     [SerializeField] Lan_WaveSpawner waveSpawner;
@@ -42,6 +43,7 @@ public class Akino_MapManager : MonoBehaviour
         int rotationIndex = Random.Range(0, rotations.Length);
         Quaternion homeRotation = rotations[rotationIndex];
         lastSpawnedTile = Instantiate(homeTile, Vector3.zero, homeRotation);
+        doorDirectionList[0] = lastSpawnedTile.transform;
         doorDirection = lastSpawnedTile.transform;
         doorScript = lastSpawnedTile.GetComponentInChildren<Akino_DoorDeletion>();
 
@@ -59,7 +61,7 @@ public class Akino_MapManager : MonoBehaviour
             {
                 int tileIndex = Random.Range(0, mapTiles.Count);
                 Vector3 newTilePosition = Vector3.zero;
-                    newTilePosition = lastSpawnedTile.transform.position + doorDirection.rotation * new Vector3(0f, 0f, 1f) * 50;
+                newTilePosition = lastSpawnedTile.transform.position + doorDirection.rotation * new Vector3(0f, 0f, 1f) * 50;
                 int rotationIndex = Random.Range(0, rotations.Length);
                 Quaternion tileRotation = rotations[rotationIndex];
                 Destroy(instancedTile);
@@ -76,8 +78,19 @@ public class Akino_MapManager : MonoBehaviour
                 
                 rerolling = false;
                 doorDeleted = false;
-                Transform childOfTheLastSpawnedTile = lastSpawnedTile.transform.GetChild(0);
-                doorDirection = childOfTheLastSpawnedTile;
+
+                int numberOfChildren = lastSpawnedTile.transform.childCount;
+    
+                for (int i = 0; i < numberOfChildren; i++)
+                {
+                    if (lastSpawnedTile.transform.GetChild(i).name == "DoorCollider")
+                    {
+                        doorDirectionList[i] = lastSpawnedTile.transform.GetChild(i);
+                        Debug.Log("doorDirection:" + i + " " + doorDirectionList[i]);
+                    }
+                }
+               
+               
                 
                 Lan_EventManager.NewSpawnedPoint();
                 
