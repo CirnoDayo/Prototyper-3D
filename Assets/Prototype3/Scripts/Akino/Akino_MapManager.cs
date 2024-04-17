@@ -46,7 +46,6 @@ public class Akino_MapManager : MonoBehaviour
         doorScript = lastSpawnedTile.GetComponentInChildren<Akino_DoorDeletion>();
 
         UpdateNavMesh();
-        
     }
 
     
@@ -71,12 +70,15 @@ public class Akino_MapManager : MonoBehaviour
                 lastSpawnedTile = instancedTile;
                 instancedTile = null;
                 doorScript = null;
-                Debug.Log("finished");
+               
+                //Debug.Log("finished");
                 UpdateNavMesh();
+                
                 rerolling = false;
                 doorDeleted = false;
                 Transform childOfTheLastSpawnedTile = lastSpawnedTile.transform.GetChild(0);
                 doorDirection = childOfTheLastSpawnedTile;
+                
                 Lan_EventManager.NewSpawnedPoint();
                 
             }
@@ -85,7 +87,6 @@ public class Akino_MapManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        
         if (doorScript == null)
         {
             doorScript = doorDirection.GetComponent<Akino_DoorDeletion>();

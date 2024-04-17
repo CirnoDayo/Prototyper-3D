@@ -46,6 +46,10 @@ public class Lan_EnemyBomb : MonoBehaviour
             {
                 ApplyDamage(filteredCollider.transform,damageDealt/2);
             }
+            else if (filteredCollider.CompareTag("Tower"))
+            {
+                ApplyDamage(filteredCollider.transform,damageDealt/2);
+            }
         }
         //Destroy(gameObject.GetComponent<Lan_EnemyBomb>());
     }
@@ -63,9 +67,11 @@ public class Lan_EnemyBomb : MonoBehaviour
         {
             enemyBomb.InteractWithAnotherBomb();
         }
-        else
+        
+        Lan_TowerScript lanTowerScript = enemy.GetComponent<Lan_TowerScript>();
+        if (lanTowerScript != null)
         {
-            return;
+            lanTowerScript.TowerTakeDamge(damage);
         }
     }
 

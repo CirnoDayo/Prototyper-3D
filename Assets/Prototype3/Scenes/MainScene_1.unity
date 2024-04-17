@@ -759,10 +759,12 @@ MonoBehaviour:
   - {fileID: 7927483621283959747, guid: d72b4ae3f3ce42a4f9b58357767538d1, type: 3}
   instancedTile: {fileID: 0}
   startButton: {fileID: 1266475393}
+  divisible: 0
   rerolling: 0
   doorDeleted: 0
   doorDirection: {fileID: 0}
   nextTileRotation: {x: 0, y: 0, z: 0, w: 0}
+  waveSpawner: {fileID: 0}
   navigationMesh: {fileID: 1034705560}
   rotations: []
   lastSpawnedTile: {fileID: 0}

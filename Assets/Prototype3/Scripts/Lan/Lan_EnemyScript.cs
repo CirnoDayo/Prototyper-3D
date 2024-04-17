@@ -38,13 +38,11 @@ public class Lan_EnemyScript : MonoBehaviour
         Lan_EventManager.EnemySpawned();
 
         WaveSpawner = FindObjectOfType<Lan_WaveSpawner>();
-
     }
 
     public void TakeDamge(int amount)
     {
         float defaultHealth = (float)startHealth;
-        Debug.Log("Damafe taken:" + amount);
         enemyHealthPoint -= amount;
         healthBar.fillAmount = enemyHealthPoint / defaultHealth;
         if (enemyHealthPoint <= 0)
@@ -79,10 +77,8 @@ public class Lan_EnemyScript : MonoBehaviour
         
         if (Physics.Raycast(transform.position, direction, out hit, detectionRange))
         {
-            
             if (hit.collider.gameObject.transform.position == endPoint)
             {
-                
                 livesUI.EnemyReachedEnd();
                 Die();
             }
