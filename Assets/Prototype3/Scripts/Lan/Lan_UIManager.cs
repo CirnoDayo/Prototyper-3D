@@ -64,11 +64,10 @@ public class Lan_UIManager : MonoBehaviour
     {
         activeEnemies--;
         destroyedAmount++;
-        if(activeEnemies <= 0 && livesUI.currentPlayersHP >= 0)
+        if(activeEnemies <= 0 && livesUI.currentPlayersHP > 0)
         {
             
             startButton.interactable = true;
-           
             AddNewTower();
         }
     }

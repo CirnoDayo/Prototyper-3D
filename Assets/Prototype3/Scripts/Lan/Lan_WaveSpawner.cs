@@ -73,6 +73,7 @@ public class Lan_WaveSpawner : MonoBehaviour
     
     IEnumerator SpawnWave()
     {
+        
         numberOfEnemiesThisWave = numberOfEnemiesInFirstWave;
         waveIndex++;
         int totalEnemyInstantiated = 0;

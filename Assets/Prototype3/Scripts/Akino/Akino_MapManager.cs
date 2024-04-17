@@ -63,6 +63,7 @@ public class Akino_MapManager : MonoBehaviour
                 startButton.interactable = false;
             if (waveSpawner.divisible())
             {
+                Debug.Log("divisible?");
                 if (!doorDeleted || doorScript.touchedGrass)
                 {
                     int tileIndex = Random.Range(0, mapTiles.Count);
@@ -85,53 +86,54 @@ public class Akino_MapManager : MonoBehaviour
                     UpdateNavMesh();
 
                     rerolling = false;
+                    Debug.Log("Running here!");
                     doorDeleted = false;
                     
                     ProcessNewTile(lastSpawnedTile);
+                    Lan_EventManager.NewSpawnedPoint();
                     //deletedDoorTransfered = false;
 
 
 
                 }
             }
+            else if (waveSpawner.divisible() == false)
+            {
+                rerolling = false;
+                Debug.Log("divisible false");
+            }
         }
     }
 
     public void ProcessNewTile(GameObject newTile)
     {
-        rerolling = false;
-        RemoveUsedDoor();   
         AddDoorsOfTile(newTile);
+        RemoveUsedDoor();   
+        
         
     }
     public void RemoveUsedDoor()
     {
-        
-        for (int i = 0; i <= doorDirectionList.Count; i++)
+        for (int i = doorDirectionList.Count - 1; i >= 0; i--)
         {
             if (doorDirectionList[i] == null)
             {
-                doorDirectionList.Remove(doorDirectionList[i]);
-            }
-            else
-            {
-                return;
+                doorDirectionList.RemoveAt(i);
             }
         }
-        
-        
     }
     
     
     public void AddDoorsOfTile(GameObject tile) 
     {
-        foreach (Transform child in tile.GetComponentInChildren<Transform>()) {
+        Transform[] children = tile.GetComponentsInChildren<Transform>();
+        foreach (Transform child in children) 
+        {
             if (child.name == "DoorCollider") 
             {
                 doorDirectionList.Add(child);
             }
         }
-        Lan_EventManager.NewSpawnedPoint();
     }
 
     public void RandomEntrance()
@@ -149,8 +151,7 @@ public class Akino_MapManager : MonoBehaviour
 
         }
         int rand = Random.Range(0, numberOfLegitEntrance);
-            // Debug.Log("Random number is: " + rand);
-            
+        
         doorDirection = doorDirectionList[rand].transform;
         
     }
