@@ -61,6 +61,7 @@ public class Akino_MapManager : MonoBehaviour
             {
                 int tileIndex = Random.Range(0, mapTiles.Count);
                 Vector3 newTilePosition = Vector3.zero;
+                RandomEntrance();
                 newTilePosition = lastSpawnedTile.transform.position + doorDirection.rotation * new Vector3(0f, 0f, 1f) * 50;
                 int rotationIndex = Random.Range(0, rotations.Length);
                 Quaternion tileRotation = rotations[rotationIndex];
@@ -89,15 +90,29 @@ public class Akino_MapManager : MonoBehaviour
                         Debug.Log("doorDirection:" + i + " " + doorDirectionList[i]);
                     }
                 }
-               
-               
-                
                 Lan_EventManager.NewSpawnedPoint();
                 
             }
         }
     }
-
+    public void RandomEntrance()//Select door direction
+    {
+        Debug.Log("Random is running");
+        int numberOfLegitEntrance = 0;
+        
+        foreach (Transform doorEntrance in doorDirectionList)
+        {
+            if (doorEntrance != null)
+            {
+                numberOfLegitEntrance++;
+                
+            }
+        }
+        Debug.Log(numberOfLegitEntrance);
+        int rand = Random.Range(0, numberOfLegitEntrance);
+        Debug.Log("Random number is: " + rand);
+        doorDirection = doorDirectionList[rand].transform;
+    }
     private void LateUpdate()
     {
         if (doorScript == null)

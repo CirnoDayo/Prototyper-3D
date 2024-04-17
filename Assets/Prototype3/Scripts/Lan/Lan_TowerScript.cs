@@ -28,7 +28,10 @@ public class Lan_TowerScript : MonoBehaviour
         towerHealthPoint -= amount;
         
         healthBar.fillAmount = towerHealthPoint / defaultHealth;
-        
+        if (towerHealthPoint <= 0)
+        {
+            TowerDestroy();
+        }
     }
   
     void TowerDestroy()

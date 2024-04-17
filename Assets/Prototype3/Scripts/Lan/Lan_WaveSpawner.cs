@@ -53,6 +53,7 @@ public class Lan_WaveSpawner : MonoBehaviour
 
     private void TheNewSpawnPoint()
     {
+        mapManager.RandomEntrance();
         spawnPoint = mapManager.doorDirection.position;
     }
 
@@ -68,9 +69,7 @@ public class Lan_WaveSpawner : MonoBehaviour
     private int enemyWithBombExist = 0;
     private int normalEnemyExist = 0;
 
-
     
-
     IEnumerator SpawnWave()
     {
         numberOfEnemiesThisWave = numberOfEnemiesInFirstWave;
@@ -149,6 +148,9 @@ public class Lan_WaveSpawner : MonoBehaviour
     }
     void SpawnEnemy(int enemyIndex)
     {
+        mapManager.RandomEntrance();
+        spawnPoint = mapManager.doorDirection.position;
+        
         Quaternion rotation = Quaternion.Euler(0, 180, 0);
         Instantiate(enemyPrefab[enemyIndex], spawnPoint, rotation);
     }
