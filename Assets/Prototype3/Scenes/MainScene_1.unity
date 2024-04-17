@@ -779,7 +779,6 @@ MonoBehaviour:
   rotations: []
   lastSpawnedTile: {fileID: 0}
   doorScript: {fileID: 0}
-  deletedDoorTransfered: 0
 --- !u!114 &1034705562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -835,9 +834,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   livesText: {fileID: 1845262676}
+  currentPlayersHP: 0
   startLives: 20
   _round: 0
   damageTaken: 1
+  allButtons: []
 --- !u!114 &1034705565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -851,8 +852,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEnemies: 0
+  destroyedAmount: 0
   cannonManager: {fileID: 0}
+  _lanWaveSpawner: {fileID: 0}
+  livesUI: {fileID: 0}
   startButton: {fileID: 0}
+  enemiesSpawned: 0
 --- !u!1 &1075311311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,14 +1131,13 @@ MonoBehaviour:
   m_text: " This is just a simple Tower Defense proof of concept\n Camera movement:
     Hold right mouse button to move camera, scroll wheel to zoom.\n To start:\n\tChoose
     a kind of tower from below\n\tPlace it onto a spot on a map\n\tStart the round
-    once you're satisfied with the placement\n * Note: there is no destroying towers
-    at this point in time, so be careful where you place them!\n Use the R key to
-    restart, useful for when bugs appear. Some bugs found: map generation doesn't
-    work when the path gets T-boned, sometimes enemies get stuck when spawning in.\n\n
-    The goal for this prototype is to prove that the tower defense mechanics work
-    well enough.\n Current limit for this prototype is round 8, but you can go higher.
-    Just note that bugs are more likely to occur the longer you play.\n\n That's
-    it! Now be our precious lab rats!!!!!!!"
+    once you're satisfied with the placement\n * Note: The towers can be destroy
+    by their own bombs or enemies' bombs (if it in the range), so be careful where
+    you place them!\n Use the R key to restart, useful for when bugs appear. Some
+    bugs found: map generation doesn't work when the path gets T-boned, sometimes
+    enemies get stuck when spawning in.\n\n The goal for this prototype is to prove
+    that the tower defense mechanics work well enough.\n Bugs are more likely to
+    occur the longer you play.\n\n That's it! Now be our precious lab rats!!!!!!!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
