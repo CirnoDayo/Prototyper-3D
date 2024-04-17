@@ -5,7 +5,9 @@ public static class Lan_EventManager
 {
     public static event Action OnEnemySpawned;
     public static event Action OnEnemyDestroyed;
-    public static event Action UpdateSpawnedPoint; 
+    public static event Action UpdateSpawnedPoint;
+
+    public static event Action AddingNewTower;
 
     public static void EnemySpawned()
     {
@@ -20,6 +22,11 @@ public static class Lan_EventManager
     public static void NewSpawnedPoint()
     {
         UpdateSpawnedPoint?.Invoke();
+    }
+
+    public static void AddingNewTowerRandomly()
+    {
+        AddingNewTower?.Invoke();
     }
 }
 

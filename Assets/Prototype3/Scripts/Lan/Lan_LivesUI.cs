@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class Lan_LivesUI : MonoBehaviour
 {
     public TextMeshProUGUI livesText;
     private static int _lives;
+    public int currentPlayersHP;
     public int startLives = 20;
     [SerializeField] private int _round;
     [SerializeField] private int damageTaken = 1;
@@ -23,8 +25,12 @@ public class Lan_LivesUI : MonoBehaviour
             allButtons.Add(button);
         }
     }
-    
-   
+
+    private void Update()
+    {
+        currentPlayersHP = _lives;
+    }
+
     public void EnemyReachedEnd()
     {
         _lives -= damageTaken;

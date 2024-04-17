@@ -770,6 +770,7 @@ MonoBehaviour:
   rerolling: 0
   doorDeleted: 0
   doorDirection: {fileID: 0}
+  deletedDoorDirection: {fileID: 0}
   doorDirectionList:
   - {fileID: 0}
   nextTileRotation: {x: 0, y: 0, z: 0, w: 0}
@@ -778,6 +779,7 @@ MonoBehaviour:
   rotations: []
   lastSpawnedTile: {fileID: 0}
   doorScript: {fileID: 0}
+  deletedDoorTransfered: 0
 --- !u!114 &1034705562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,8 +812,8 @@ MonoBehaviour:
   startButton: {fileID: 0}
   roundCounter: {fileID: 1084424662}
   bombRatio: 0.4
-  numberOfEnemiesInFirstWave: 1
-  enemyDefaultInstantiatedRate: 0.5
+  numberOfEnemiesInFirstWave: 5
+  enemyDefaultInstantiatedRate: 0.3
   firstWaveInsDelayTime: 1.3
   increaseInsDelayTimeRate: 0.1
   delayInstantiateTime: 0

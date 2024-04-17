@@ -41,12 +41,12 @@ public class CannonManager : MonoBehaviour
 
     private void OnEnable()
     {
-        Lan_EventManager.UpdateSpawnedPoint += AddingTower;
+        Lan_EventManager.AddingNewTower += AddingTower;
     }
 
     private void OnDisable()
     {
-        Lan_EventManager.UpdateSpawnedPoint -= AddingTower;    
+        Lan_EventManager.AddingNewTower -= AddingTower;    
     }
 
 
@@ -155,8 +155,6 @@ public class CannonManager : MonoBehaviour
         else
         {
             heavyCannonLimit++;
-           
-            
         }
        
         

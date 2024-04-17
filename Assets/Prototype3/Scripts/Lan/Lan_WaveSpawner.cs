@@ -60,6 +60,7 @@ public class Lan_WaveSpawner : MonoBehaviour
     public void SpawnWaveInput()
     {
         StartCoroutine(SpawnWave());
+        
     }
     
     private float numberOfEnemiesLastWave = 0;
@@ -161,6 +162,6 @@ public class Lan_WaveSpawner : MonoBehaviour
         {
             return true;
         }
-        return waveIndex % 3 == 0;
+        return waveIndex % 2 == 0;
     }
 }
